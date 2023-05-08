@@ -7,14 +7,15 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBars = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Hamburgueseria La Morocha</Navbar.Brand>
-          <Nav className="me-auto">
+      <Navbar bg="danger" variant="dark">
+        <Container  className="me-auto d-flex justify-content-around">
+          <Link href="/" className='nav-link'>Hamburgueseria La Morocha</Link>
+          <Nav>
 
-            <Link href="/" className='nav-link'>Home</Link>
-            <Link href="/contacto" className='nav-link'>Contacto</Link>
-            <Link href="/menus" className='nav-link'>Menus</Link>
+            <Link href="/" className='nav-link'>INICIO</Link>
+            <Link href="/conocenos" className='nav-link'>CONOCENOS</Link>
+            <Link href="/contacto" className='nav-link'>CONTACTO</Link>
+            <Link href="/menus" className='nav-link'>MENUS</Link>
 
           </Nav>
         </Container>
