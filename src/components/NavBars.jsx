@@ -8,14 +8,20 @@ const NavBars = () => {
   return (
     <>
       <Navbar bg="danger" variant="dark">
-        <Container  className="me-auto d-flex justify-content-around">
+        <Container className="me-auto d-flex justify-content-around flex-wrap">
           <Link href="/" className='nav-link'>Hamburgueseria La Morocha</Link>
           <Nav>
 
-            <Link href="/" className='nav-link'>INICIO</Link>
-            <Link href="/conocenos" className='nav-link'>CONOCENOS</Link>
-            <Link href="/contacto" className='nav-link'>CONTACTO</Link>
-            <Link href="/menus" className='nav-link'>MENUS</Link>
+            <Link href="/" className='nav-link fw-bold'>INICIO</Link>
+            <Link href="/menus" className='nav-link fw-bold'>MENUS</Link>
+            <Link href="/conocenos" className='nav-link fw-bold'>CONOCENOS!</Link>
+            <Link href="/contacto" className='nav-link fw-bold'>CONTACTO</Link>
+            {
+             
+              <Link href="/admin" className='nav-link fw-bold'>LOGIN</Link>
+
+            }
+
 
           </Nav>
         </Container>

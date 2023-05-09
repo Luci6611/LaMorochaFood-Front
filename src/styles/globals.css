@@ -3,6 +3,15 @@
     list-style: none;
 }
 
+.seccion-ofertas{
+    height: 20%;
+    background-color: 	#6D071A;
+}
+
+.card-ofertas{
+   border-radius: 100px 100px 0 0 !important;
+    width: 14em;
+}
 
 footer{
     height: auto;
