@@ -7,10 +7,10 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBars = () => {
   return (
     <>
-      <Navbar bg="danger" variant="dark">
+      <Navbar variant="dark" >
         <Container className="me-auto d-flex justify-content-around flex-wrap">
           <Link href="/" className='nav-link'>Hamburgueseria La Morocha</Link>
-          <Nav>
+          <Nav className='text-light'>
 
             <Link href="/" className='nav-link fw-bold'>INICIO</Link>
             <Link href="/menus" className='nav-link fw-bold'>MENUS</Link>

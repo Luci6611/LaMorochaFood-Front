@@ -3,14 +3,36 @@
     list-style: none;
 }
 
+nav {
+    background-color: rgb(232, 16, 16);
+    color: white !important;
+}
+
 .seccion-ofertas{
     height: 20%;
     background-color: 	#6D071A;
 }
 
 .card-ofertas{
-   border-radius: 100px 100px 0 0 !important;
+    background-color: rgb(83, 83, 83) !important;
+    color: rgb(239, 234, 234);
+    border-radius: 100px 100px 0 0 !important;
     width: 14em;
+    overflow: hidden;
+}
+
+#titulo-ofertas{
+   color: #ab3712;
+}
+
+.card-ofertas img{
+   margin: 0;
+   padding: 0;
+}
+
+.mapa iframe{
+    height: 10%;
+    width: 90%;
 }
 
 footer{
