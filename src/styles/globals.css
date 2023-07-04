@@ -60,28 +60,123 @@ footer{
 /* ESTILOS DE SOBRE - NOSOTROS  */
 
 .body-sobre-nosotros{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #65000B;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     
 }
 .contenedor-nosotros{
 
     width: 800px;
-    height: 700px;
-    background-color: #eeecec;
-    border-top: #806906 5px solid;
-    box-shadow: 0px 10px 15px 17px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,43.1);
+    height: auto;
+    background-color: #252020;
+    border-top: #9e9c94 5px solid;
+    box-shadow: 0px 10px 15px 17px rgba(22, 22, 20, 0.1),0px 10px 15px -3px rgb(64, 64, 62);
 
 }
 .contenedor-nosotros h1{
-    font-size: 2rem;
+    font-size: 2.8rem;
+   
     font-weight: bold;
-    text-transform: uppercase;
-    color: #372427db;
+    margin-top: 10px;
+    color: #a9942fdb;
     text-align: center;
+   
+}
+.hrsobrenosotros{
+    color: #e3b922;
+    width: 700px;
+    margin: auto;
+}
+
+.cont-img-sobrenosotros{
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid #e3b922;
+}
+
+.cont-img-sobrenosotros img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 50%;
+}
+.contenedor-nosotros h2{
+    font-size: 2.8rem;
+
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #a9942fdb;
+    text-align: center;
+   
+}
+.sobrenosotrosuno{
+    display: flex;
+    margin-bottom: 40px;
+}
+.hamburguesauno-nosotros{
+   margin: 10px 0 0 30px ;
+    width: 350px;
+    height: 400px;
+}
+.sobrenosotrosuno img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.textouno{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+.sobrenosotrosuno p{
+ color: #d7d3c2;
+ font-size: 1.5rem;
+}
+
+
+.sobrenosotrosdos{
+    display: flex;
+    margin-bottom: 40px;
+}
+.hamburguesdos-nosotros{
+   margin: 0 20px 0 30px ;
+    width: 350px;
+    height: 400px;
+
+}
+.sobrenosotrosdos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.textodos{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+.sobrenosotrosdos p{
+ color: #d7d3c2;
+ font-size: 1.5rem;
+}
+.equipocontenedor{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.equipocontenedor img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
 /* FIN ESTILOS DE SOBRE - NOSOTROS  */
