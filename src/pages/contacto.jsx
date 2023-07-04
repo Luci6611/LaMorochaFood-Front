@@ -15,7 +15,18 @@ const contacto = () => {
             </Head>
            
             <div className='body-contacto'>
-                 <p>1</p>   
+            <div className="fondoprincipal">
+            <h1>Contacto</h1>
+                <div className="fondoredondo">
+                <div className="fondoredondodos">
+            <form class="form">
+    <input class="input" type="text" placeholder="Nombre"/>
+    <input class="input" type="text" placeholder="Email"/>
+    <textarea class="textarea" placeholder="Escribe un mensaje"></textarea> 
+    <center><button class="button">Enviar</button></center>
+</form>   
+</div>  </div>
+            </div>
             </div>
         </>
 
