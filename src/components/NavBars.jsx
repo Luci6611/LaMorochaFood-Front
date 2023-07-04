@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBars = () => {
   return (
     <>
+<<<<<<< HEAD
      <Navbar expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,6 +29,7 @@ const NavBars = () => {
             <Link className="ms-auto nav-link text-light" href="/login">
               LOGIN
             </Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
