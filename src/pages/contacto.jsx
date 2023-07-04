@@ -13,7 +13,10 @@ const contacto = () => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="styles-sheets" href="../stylescomponents.css" />
             </Head>
-            <div>contacto</div>
+           
+            <div className='body-contacto'>
+                 <p>1</p>   
+            </div>
         </>
 
     )
