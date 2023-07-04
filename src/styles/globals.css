@@ -10,9 +10,25 @@
 }
 
 nav {
-    background:linear-gradient(rgb(181, 49, 49),rgb(162, 30, 30)) ;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+    border-bottom: 4px solid    #ea7f05;
+    
+    border-radius: 0 0 60px 60px;
     color: white !important;
-    height: 100px;
+    height: 110px;
+}
+.conteinerlogo{
+  width: 100px;
+  height:100px;
+}
+.navlogo{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carrimg{
+  object-fit: cover;
+  
 }
 
 .carousel img{
@@ -25,25 +41,105 @@ nav {
 
 
 .seccion-ofertas{
-    height: 20%;
-    background-color: 	#6D071A;
+    border-top: 6px solid  #ea7f05;
+    border-bottom: 6px solid  #ea7f05;
+    height: 100%;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
 }
-
+.contenedor-ofer{
+    width: 100%;
+ 
+    height: 100%;
+}
 .card-ofertas{
-    background-color: rgb(83, 83, 83) !important;
+
+    background-color: rgb(20, 19, 14) !important;
     color: rgb(239, 234, 234);
-    border-radius: 100px 100px 0 0 !important;
+   
     width: 14em;
     overflow: hidden;
 }
-
-#titulo-ofertas{
-   color: #ab3712;
+#cardd{
+  width: 300px;
+  height: 500px;
 }
 
+/* boton animado de ofertas */
+.bt {
+  margin: auto;
+  position: relative;
+  width: 155px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #f08a23;
+  background-color: #e18316;
+}
+
+.bt, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.bt .button__text {
+  transform: translateX(30px);
+  color: #e3d0d0;
+  text-shadow: 4px 4px 4px #000;
+  font-weight: 600;
+}
+
+.bt .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #ae5f04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bt .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.bt:hover {
+  background: #ae5f04;
+}
+
+.bt:hover .button__text {
+  color: transparent;
+}
+
+.bt:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.bt:active .button__icon {
+  background-color: #e18316;
+}
+
+.bt:active {
+  background-color: #e18316;
+}
+/* boton animado de ofertas */
+
+
+#titulo-ofertas{
+   color: #e1d8d5;
+   font-weight: bold;
+   text-shadow: 3px 3px 3px #000;
+}
+.img-oferta{
+  width: 300px;
+  height: 300px;
+}
 .card-ofertas img{
-   margin: 0;
-   padding: 0;
+  width: 100%;
+  height: 100%;
+ object-fit: cover;
 }
 
 .mapa iframe{
@@ -540,3 +636,8 @@ transition: all .4s;
   }
 
 /* FIN ESTILOS DE LOGIN */
+
+
+.footer{
+  background:linear-gradient(rgb(14, 13, 13),rgb(1, 1, 1)) ;
+}

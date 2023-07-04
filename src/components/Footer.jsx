@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className='w-100  p-3  bg-dark text-light  position-relative bottom-0'>
+    <footer className='w-100  p-3 footer text-light  position-relative bottom-0'>
         <div className='container d-flex justify-content-around'>
          <ol>
           <h2>contacto</h2>
@@ -19,6 +19,9 @@ const Footer = () => {
          </ol>
 
         </div>
+        <div className="conteinerlogo">
+          <img className='navlogo' src="/Lamorochalogo2.jpg" alt="" /></div>
+        
         <p className='text-center'>
         © Copyright Luno 2023
         </p>
