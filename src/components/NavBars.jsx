@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavBars = () => {
   return (
     <>
-<<<<<<< HEAD
+
      <Navbar expand="lg" className="rounded-bottom bg-darkblue">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
