@@ -8,21 +8,21 @@ const Carouseles = () => {
         <Carousel className='carousel'  >
             <Carousel.Item >
                 <img
-                    className="d-block w-100 h-10"
+                    className="d-block w-100 h-10 carrimg"
                     src="https://images2.alphacoders.com/560/560491.jpg"
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item >
                 <img
-                    className="d-block w-100 h-25"
+                    className="d-block w-100 h-25  carrimg"
                     src="https://images3.alphacoders.com/276/276759.jpg"
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 carrimg"
                     src="https://images6.alphacoders.com/300/300228.jpg"
                     alt="Third slide"
                 />
