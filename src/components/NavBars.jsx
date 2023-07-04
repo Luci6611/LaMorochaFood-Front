@@ -18,7 +18,7 @@ const NavBars = () => {
             <Link href="/contacto" className='nav-link fw-bold'>CONTACTO</Link>
             {
              
-              <Link href="/admin" className='nav-link fw-bold'>LOGIN</Link>
+              <Link href="/login" className='nav-link fw-bold'>LOGIN</Link>
 
             }
 
