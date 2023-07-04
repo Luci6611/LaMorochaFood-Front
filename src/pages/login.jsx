@@ -1,7 +1,46 @@
 import Head from 'next/head'
 import React from 'react'
+import { useState } from 'react';
+import swal from 'sweetalert';
+import Cookies from 'universal-cookie';
 
 const login = () => {
+
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState([]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const datos = await login({ email, password });
+    const cookies = new Cookies();
+
+    if (datos?.token) {
+
+      cookies.set("token", `${datos.token}`, { path: "/", maxAge: 3850 });
+      cookies.set("nombreUsuario", `${datos.token}`, { path: "/", maxAge: 3850 });
+
+
+
+      swal(
+        `Bienvenido ${datos.usuario.nombre}`,
+        "Haz Clik para continuar!",
+        "success"
+      ).then((active) => {
+        if (active) {
+          location.replace("/admi");
+
+        }
+      });
+    } else {
+      if (datos?.errors) {
+        setMessage(datos.errors);
+      } else {
+        setMessage([{ msg: datos.msg }]);
+      }
+    }
+  };
     return (
 
 
@@ -16,22 +55,35 @@ const login = () => {
             <div className='login-conteiner'>Iniciar sesion</div>
             <div class="login-box">
   <p>Iniciar sesion</p>
-  <form>
+  <form onSubmit={handleSubmit}>
     <div class="user-box">
-      <input required="" name="" type="text"/>
+      <input required  name="email" type="email" value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+      />
       <label>Email</label>
     </div>
     <div class="user-box">
-      <input required="" name="" type="password"/>
+                     
+      <input required value={password}  onChange={(e) => setPassword(e.target.value)} name="pasword" type="password" />
       <label>Contraseña</label>
     </div>
-    <a href="#">
+    {message.length > 0 &&
+              message.map((item, index) => (
+                <div
+                  key={index}
+                  className="login__alertas   alert alert-danger "
+                  role="alert"
+                >
+                  {item.msg}
+                </div>
+              ))}
+    <button  >
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Enviar
-    </a>
+    </button>
   </form>
  
 </div>
