@@ -15,6 +15,14 @@ nav {
     height: 100px;
 }
 
+.carousel img{
+    max-height: 30rem !important;
+}
+
+.slide {
+    height: 100%;
+}
+
 
 .seccion-ofertas{
     height: 20%;
@@ -41,6 +49,9 @@ nav {
 .mapa iframe{
     height: 10%;
     width: 90%;
+}
+.nav{
+    
 }
 
 footer{
