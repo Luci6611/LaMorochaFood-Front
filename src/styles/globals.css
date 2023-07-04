@@ -10,8 +10,9 @@
 }
 
 nav {
-    background:linear-gradient(rgb(91, 59, 27),rgb(149, 22, 22)) ;
-    border-bottom: 4px solid #675d5c;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+    border-bottom: 4px solid    #ea7f05;
+    
     border-radius: 0 0 60px 60px;
     color: white !important;
     height: 100px;
@@ -31,9 +32,10 @@ nav {
 
 
 .seccion-ofertas{
-    border-top: 6px solid #474646;
+    border-top: 6px solid  #ea7f05;
+    border-bottom: 6px solid  #ea7f05;
     height: 100%;
-    background-color: 	#6D071A;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
 }
 .contenedor-ofer{
     width: 100%;
@@ -627,3 +629,8 @@ transition: all .4s;
   }
 
 /* FIN ESTILOS DE LOGIN */
+
+
+.footer{
+  background:linear-gradient(rgb(14, 13, 13),rgb(1, 1, 1)) ;
+}
