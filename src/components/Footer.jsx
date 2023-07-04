@@ -19,6 +19,9 @@ const Footer = () => {
          </ol>
 
         </div>
+        <div className="conteinerlogo">
+          <img className='navlogo' src="/Lamorochalogo2.jpg" alt="" /></div>
+        
         <p className='text-center'>
         © Copyright Luno 2023
         </p>

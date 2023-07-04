@@ -12,7 +12,10 @@ const NavBars = () => {
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        <Link href="/" className='nav-link'>Hamburgueseria La Morocha</Link>
+        <Link href="/" className='nav-link'>
+          <div className="conteinerlogo">
+          <img className='navlogo' src="/Lamorochalogo2.jpg" alt="" /></div>
+          </Link>
           <Nav className="ms-auto text-light">
             <Link className="ms-auto nav-link text-light" href="/">
               INICIOS
