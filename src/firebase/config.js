@@ -1,5 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,3 +18,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export const storage = getStorage(app)
+
+
+
+export const upload = async (file) => {
+
+  const storageref = ref(storage,v4());
+    await uploadBytes(storageref, file)
+    const url = await getDownloadURL(storageref)
+    return url;
+}

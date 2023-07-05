@@ -19,11 +19,11 @@ const contacto = () => {
             <h1>Contacto</h1>
                 <div className="fondoredondo">
                 <div className="fondoredondodos">
-            <form class="form">
-    <input class="input" type="text" placeholder="Nombre"/>
-    <input class="input" type="text" placeholder="Email"/>
-    <textarea class="textarea" placeholder="Escribe un mensaje"></textarea> 
-    <center><button class="button">Enviar</button></center>
+            <form className="form">
+    <input className="input" type="text" placeholder="Nombre"/>
+    <input className="input" type="text" placeholder="Email"/>
+    <textarea className="textarea" placeholder="Escribe un mensaje"></textarea> 
+    <center><button className="button">Enviar</button></center>
 </form>   
 </div>  </div>
             </div>
