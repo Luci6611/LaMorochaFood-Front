@@ -17,10 +17,42 @@ nav {
     color: white !important;
     height: 110px;
 }
+.subnav{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  background-color: #b40f0f;
+  border: 5px solid #843217;
+}
+.subnav a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 10px;
+  color: #FFf;
+  font-size: 1.3rem;
+  text-transform: capitalize
+}
+.subnav a:hover{
+ color: #ffffff;
+ background-color: #cf2a2a;
+ transform: scale(2);
+ margin: 0 20px;
+ transition: all .3s;
+}
 .conteinerlogo{
   width: 100px;
   height:100px;
 }
+
+.nav-link{
+  box-shadow: 5px 5px 4px #775d48;
+  background-color:#e18316!important;
+  border: 2px solid #843217;
+  color: #fff;
+  font-weight: bold;
+}
+
 .navlogo{
   width:100%;
   height: 100%;
@@ -50,6 +82,11 @@ nav {
     width: 100%;
  
     height: 100%;
+}
+.card-titulocolor{
+  color: #ea7f05 !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 2px #4f4c4c;
 }
 .card-ofertas{
 
@@ -457,7 +494,31 @@ footer{
 }
 /* FIN ESTILOS DE SOBRE - NOSOTROS  */
 
-
+/* ESTILOS MENU INICIO */
+.main-menus{
+  width: 100%;
+  height: 100vh;
+  background:linear-gradient(rgb(129, 81, 32),rgb(30, 22, 22),rgb(60, 38, 8)) ;
+}
+.contenedor-card-menus{
+  width: 1000px;
+ 
+  margin: auto;
+padding: 10px;
+  display: flex;
+ 
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.border-c{
+  border: 2px rgb(177, 96, 59) solid !important;
+}
+.anima{
+  background-color: #4f1608;
+}
+/* FIN ESTILOS MENU */
 /*ESTILOS DE LOGIN */
 
 .login-conteiner{
