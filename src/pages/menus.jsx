@@ -1,8 +1,27 @@
+import { traerMenus } from '@/helpers/admi';
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Card } from 'react-bootstrap';
 
 import Card from "react-bootstrap/Card";
 const menus = () => {
+
+    const [menus, setMenus] = useState([]);
+
+
+   const traerData = async ()=>{
+   const data = await traerMenus();
+   setMenus(data);
+   console.log(data);
+
+    }
+
+    useEffect(() => {
+      
+        traerData()
+
+    }, [])
+    
     return (
 
 

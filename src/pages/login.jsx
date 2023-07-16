@@ -1,19 +1,22 @@
 import Head from 'next/head'
-import React from 'react'
 import { useState } from 'react';
 import swal from 'sweetalert';
 import Cookies from 'universal-cookie';
+import { logins } from '../helpers/auth';
 
 const login = () => {
 
 
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
-
+  const [email, setEmail] = useState(" ");
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const datos = await login({ email, password });
+
+    const datos = await logins({ email, password });
+    
     const cookies = new Cookies();
 
     if (datos?.token) {
@@ -53,16 +56,16 @@ const login = () => {
                 <link rel="styles-sheets" href="../stylescomponents.css" />
             </Head>
             <div className='login-conteiner'>Iniciar sesion</div>
-            <div class="login-box">
+            <div className="login-box">
   <p>Iniciar sesion</p>
   <form onSubmit={handleSubmit}>
-    <div class="user-box">
+    <div className="user-box">
       <input required  name="email" type="email" value={email}
                       onChange={(e) => setEmail(e.target.value)}
       />
       <label>Email</label>
     </div>
-    <div class="user-box">
+    <div className="user-box">
                      
       <input required value={password}  onChange={(e) => setPassword(e.target.value)} name="pasword" type="password" />
       <label>Contraseña</label>

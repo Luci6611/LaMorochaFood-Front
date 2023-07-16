@@ -1,12 +1,12 @@
 
 
-const url = "https://morocha-backend.vercel.app/api/auth";
+const url = "https://morocha-backend.vercel.app/api/auth/login";
 
 export const usuarios = {usuario:""};
 
 
 
-export const login = async (datos) => {
+export const logins = async (datos) => {
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify(datos),
