@@ -55,21 +55,18 @@ const login = () => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="styles-sheets" href="../stylescomponents.css" />
             </Head>
-            <div className='login-conteiner'>Iniciar sesion</div>
-            <div className="login-box">
+            <div className='login-conteiner'>
+            <div className="login-cuerpo">
   <p>Iniciar sesion</p>
-  <form onSubmit={handleSubmit}>
-    <div className="user-box">
-      <input required  name="email" type="email" value={email}
+  <form   onSubmit={handleSubmit}>
+      <input autocomplete="off" className='form-controls' placeholder='email'  required  name="email" type="email" value={email}
                       onChange={(e) => setEmail(e.target.value)}
       />
-      <label>Email</label>
-    </div>
-    <div className="user-box">
+    
                      
-      <input required value={password}  onChange={(e) => setPassword(e.target.value)} name="pasword" type="password" />
-      <label>Contraseña</label>
-    </div>
+      <input autocomplete="off" className='form-controls' placeholder='contraseña' required value={password}  onChange={(e) => setPassword(e.target.value)} name="pasword" type="password" />
+
+   
     {message.length > 0 &&
               message.map((item, index) => (
                 <div
@@ -80,16 +77,12 @@ const login = () => {
                   {item.msg}
                 </div>
               ))}
-    <button  >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <button className='btnf'  >
       Enviar
     </button>
   </form>
  
-</div>
+</div></div>
         </>
 
     )
