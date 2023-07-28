@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap';
 
-import Card from "react-bootstrap/Card";
+
 const menus = () => {
 
     const [menus, setMenus] = useState([]);

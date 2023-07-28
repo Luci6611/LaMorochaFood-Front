@@ -1,6 +1,6 @@
 import Cookies from "universal-cookie";
 
-const url = "https://morocha-backend.vercel.app/api/";
+const url = "https://lamorochafood-backend.vercel.app/api/";
 
 const cookie = new Cookies();
 

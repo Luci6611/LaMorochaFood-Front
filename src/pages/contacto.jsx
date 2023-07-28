@@ -15,17 +15,15 @@ const contacto = () => {
             </Head>
            
             <div className='body-contacto'>
-            <div className="fondoprincipal">
             <h1>Contacto</h1>
-                <div className="fondoredondo">
-                <div className="fondoredondodos">
-            <form className="form">
-    <input className="input" type="text" placeholder="Nombre"/>
-    <input className="input" type="text" placeholder="Email"/>
-    <textarea className="textarea" placeholder="Escribe un mensaje"></textarea> 
-    <center><button className="button">Enviar</button></center>
-</form>   
-</div>  </div>
+          
+            <div className="fondoprincipal">
+                <p>Envianos tu reseña , que te parecio nuestro servivio ?</p>
+                <input type="text" name="email" id="email"  placeholder='nombre'/>
+              
+             
+         
+ 
             </div>
             </div>
         </>

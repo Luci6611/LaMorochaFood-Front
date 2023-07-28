@@ -18,7 +18,7 @@ const NavBars = () => {
           </Link>
           <Nav className="ms-auto text-light">
             <Link className="ms-auto nav-link text-light" id='lin' href="/">
-              INICIOS
+              INICIO
             </Link>
             <Link className="ms-auto nav-link text-light" href="/menus">
               MENUS
@@ -30,7 +30,7 @@ const NavBars = () => {
             CONTACTO
             </Link>
             <Link className="ms-auto nav-link text-light" href="/login">
-              LOGIN
+            <i class="bi bi-0-circle-fill"></i>
             </Link>
 
           </Nav>

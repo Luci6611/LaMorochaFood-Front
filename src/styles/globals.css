@@ -46,8 +46,8 @@ nav {
 }
 
 .nav-link{
-  box-shadow: 5px 5px 4px #775d48;
-  background-color:#e18316!important;
+
+ 
   border: 2px solid #843217;
   color: #fff;
   font-weight: bold;
@@ -194,158 +194,42 @@ footer{
 
 .body-contacto{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
-}
+  }
+  .body-contacto h1{
+      font-size: 2.8rem;
+    text-shadow: 2px 2px 4px   #1a1817;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      color:  #e3c5b9;
+      text-align: center;
+      text-transform: uppercase;
+  }
 .fondoprincipal{
+  text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
-    width: 1000px;
+    width: 700px;
     height: 900px;
    border-radius: 100px 100px 0 0;
-    background-color: #212121;
+   background:linear-gradient( #1b1614,rgb(62, 57, 52),rgb(16, 10, 7)) ;
+   box-shadow: 3px 3px 3px 3px  #5f382a;
 }
-.fondoprincipal h1{
-    font-size: 2.8rem;
+.fondoprincipal p{
 
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #a9942fdb;
-    text-align: center;
-    text-transform: uppercase;
+  color:#fff;
+  font-size:1.4rem;
 }
-.fondoredondo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
-    height: 800px;
-    border-radius: 50%;
-    border: 2px solid #4f1608;
-    background-color: #1b1717;
-}
-.fondoredondo:hover{
-    transform: rotate(360deg);
-    transition: all .4s;
-}
-.fondoredondodos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-   border-radius: 3px;
-    background-color: #943810;
-}
-.form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    background-image: linear-gradient(45deg, #330808, 
-    #3a2c09);
-    border-radius: 2.5em;
-    padding: 30px;
-    width: 500px;
-    height: 450px;
-  }
-  
-  .form::before {
-    content: '';
-    background-image: linear-gradient(45deg, #ff0000, 
-    #ffb700);
-    width: 500px;
-    height: 460px;
-    position: absolute;
-    margin-top: -34px;
-    margin-left: px;
-    z-index: -1;
-    border-radius: 2.7em;
-  }
-  
-  .button {
-    margin-top: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    background: #ff5900;
-    color: black;
-    padding: 0.7em 5.5em;
-    display: flex;
-    align-items: center;
-    border: 2px solid #66da4300;
-    border-radius: 5em;
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    border: 2px solid #ff5900;
-    background: #00000000;
-    color: #ff5900;
-  }
-  
-  .button:active {
-    border: 2px solid #66da4300;
-    background: #ff5900;
-    color: black;
-  }
-  
-  .input {
-    width: calc(100% - 10px);
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #66da4300;
-    border-bottom: 1px solid #ff5900;
-    outline: none;
-    background-color: transparent;
-    color: #ff5900;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: 0.2s;
-  }
-  
-  .input:focus {
-    border: 1px solid #66da4300;
-    border-bottom: 1px solid #ff5900;
-    background-color: transparent;
-    color: white;
-  }
-  
-  .input::placeholder {
-    color: #9b725b;
-  }
-  
-  .textarea {
-    font-family: Arial, Helvetica, sans-serif;
-    width: calc(100% - 10px);
-    padding: 8px;
-    height: 100px;
-    margin-bottom: 20px;
-    border: 1px solid #66da4300;
-    border-bottom: 1px solid #ff5900;
-    outline: none;
-    background-color: transparent;
-    color: #ff5900;
-  }
-  
-  .textarea::placeholder {
-    color: #9b725b;
-  }
-  
-  .textarea:focus {
-    border: 1px solid #66da4300;
-    border-bottom: 1px solid #ff5900;
-    background-color: transparent;
-    color: white;
-  }
 /* FIN ESTILOS DE CONTACTO  */
 /* ESTILOS DE SOBRE - NOSOTROS  */
 
@@ -391,12 +275,13 @@ footer{
     height: 300px;
     border-radius: 50%;
     border: 3px solid #afa482;
+    overflow: hidden;
 }
 
 .cont-img-sobrenosotros img {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
-    height: 100%;
+    height: auto;
     border-radius: 50%;
 }
 .cont-img-sobrenosotros img:hover{
@@ -416,6 +301,7 @@ footer{
 }
 .sobrenosotrosuno{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 40px;
 }
 .hamburguesauno-nosotros{
@@ -492,13 +378,111 @@ footer{
   transition:2000ms all ;
   
 }
+/* Responsive sobre nosotros */
+@media only screen and (max-width:704px) {
+  .body-sobre-nosotros{
+    margin: 0%;
+    width: 100vw;
+  }
+  .sobrenosotrosuno{
+   align-items: center;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .sobrenosotrosdos{
+    align-items: center;
+     display: flex;
+     flex-direction: column-reverse;
+   
+   }
+   .hamburguesauno-nosotros{
+    max-width: 100%;
+    margin: auto;
+    height: auto;
+   }
+   .sobrenosotrosuno .imguno{
+   width: 100%;
+   height: 100%;
+ 
+   object-fit: cover;
+  
+   
+   }
+  .contenedor-nosotros{
+  max-width: 80%;
+  min-width: 40%;
+  }
+}
+.equipocontenedor{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cont-img-sobrenosotros{
+  margin: 30px auto;
+  width: 40%;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #afa482;
+  overflow: hidden;
+}
+
+.cont-img-sobrenosotros img {
+  max-width: 100%;
+  
+  object-fit: cover;
+  height:100%;
+  border-radius: 50%;
+}
+@media only screen and (max-width:704px){
+  .body-sobre-nosotros{
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+  }
+  .contenedor-nosotros{
+    max-width: 100%;
+  margin: 0% ;
+
+    }
+  .hamburguesauno-nosotros{
+    max-width: 80%;
+    margin: 30px auto;
+    height: auto;
+   }
+   .sobrenosotrosuno .imguno{
+   width: 100%;
+   height: 100%;
+ 
+   object-fit: cover;}
+
+.hamburguesdos-nosotros{
+  max-width: 80%;
+  margin: 30px auto;
+  height: auto;
+ }
+ .sobrenosotrosdos img{
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;}
+
+.equipocontenedor img{
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}}
+/* Responsive sobre nosotros */
 /* FIN ESTILOS DE SOBRE - NOSOTROS  */
 
 /* ESTILOS MENU INICIO */
 .main-menus{
   width: 100%;
   height: 100vh;
-  background:linear-gradient(rgb(129, 81, 32),rgb(30, 22, 22),rgb(60, 38, 8)) ;
+  background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
 }
 .contenedor-card-menus{
   width: 1000px;

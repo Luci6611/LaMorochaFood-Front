@@ -18,9 +18,9 @@ const Ofertas = () => {
               Nuestra hamburguesa con papas y gaseosa
             </Card.Title>
             <Card.Title className="text-center text-white">$123</Card.Title>
-            <button type="button" class="bt">
-              <span class="button__text">Pedir</span>
-              <span class="button__icon">
+            <button type="button" className="bt">
+              <span className="button__text">Pedir</span>
+              <span className="button__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
