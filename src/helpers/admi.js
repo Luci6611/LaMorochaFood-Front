@@ -17,7 +17,70 @@ export const traerMenus = async () => {
     return data.productos;
 };
 
-export const eliminarMenu = async (id) => {
+export const traerCategorias = async () => {
+    const response = await fetch(`${url}categorias`, {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Authorization": cookie.get('token')
+        },
+    });
+    const data = await response.json();
+
+    return data.categorias;
+};
+
+export const createMenu = async (menu) => {
+    const response = await fetch(`${url}productos`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                categoria: menu.categoria,
+                nombre: menu.nombre,
+                descripcion: menu.descripcion,
+                autor: menu.autor,
+                precio: menu.precio,
+                categoria: menu.categoria
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": cookie.get('token'),
+            },
+        }
+
+    );
+
+    const data = await response.json(); console.log(data);
+    return data;
+
+   
+};
+
+export const putMenus = async (menu) => {
+    const response = await fetch(`${url}productos/${menu._id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                _id: menu._id,
+                categoria: menu.categoria,
+                titulo: menu.titulo,
+                descripcion: menu.descripcion,
+                autor: menu.autor,
+                precio: menu.precio,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": cookie.get('token'),
+            },
+        }
+
+    );
+
+
+    return response;
+};
+
+export const eliminarMenus = async (id) => {
     const response = await fetch(`${url}productos/${id}`, {
         method: "DELETE",
         headers: {
@@ -26,6 +89,5 @@ export const eliminarMenu = async (id) => {
         },
     });
     const data = await response.json();
-
     return data;
 };
