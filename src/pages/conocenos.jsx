@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const conocenos = () => {
   return (
-    <div className='body-sobre-nosotros'>
+    <div className='body-sobre-nosotros '>
 <div className="contenedor-nosotros">
   <h1>La Morocha</h1>
   <hr className='hrsobrenosotros' />
@@ -14,7 +14,7 @@ const conocenos = () => {
   <h2>como surgio?</h2>
   <div className="sobrenosotrosuno">
     <div className="hamburguesauno-nosotros">
-    <img src="/fondo3.jpg" alt="hamburguesa" /></div>
+    <img className='imguno' src="/fondo3.jpg" alt="hamburguesa" /></div>
     <div className="textouno">
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, consectetur nostrum? Distinctio dolor illo assumenda saepe alias quae exercitationem. Odit ipsum, earum eum expedita dolores quisquam ducimus tenetur aliquid ex.</p></div>
   </div>
