@@ -1,7 +1,24 @@
-import React from "react";
+import { traerMenusMasVendidos } from "@/helpers/getOfertas";
+import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 
 const Ofertas = () => {
+
+
+
+  const [menus, setMenus]= useState([]);
+
+
+  const traerMenusExitosos = async () =>{
+    const response = await traerMenusMasVendidos();
+    setMenus(response);
+  };
+
+  useEffect(() => {
+    traerMenusExitosos();
+  
+  }, []);
+  
   return (
     <section className="p-3 seccion-ofertas">
       <h3 className="text-center" id="titulo-ofertas">
@@ -65,7 +82,7 @@ const Ofertas = () => {
                   stroke="currentColor"
                   height="24"
                   fill="none"
-                  class="svg"
+                  className="svg"
                 >
                   <line y2="19" y1="5" x2="12" x1="12"></line>
                   <line y2="12" y1="12" x2="19" x1="5"></line>
@@ -84,9 +101,9 @@ const Ofertas = () => {
               Nuestra hamburguesa con papas y gaseosa
             </Card.Title>
             <Card.Title className="text-center text-white">$123</Card.Title>
-            <button type="button" class="bt">
-              <span class="button__text">Pedir</span>
-              <span class="button__icon">
+            <button type="button" className="bt">
+              <span className="button__text">Pedir</span>
+              <span className="button__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

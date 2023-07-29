@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie';
 import { Table } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { createMenu, eliminarMenus, putMenus, traerCategorias, traerMenus } from '@/helpers/admi';
+import { upload } from '@/firebase/config';
 
 
 const admi = () => {
@@ -21,7 +22,11 @@ const admi = () => {
     const responseCate = await traerCategorias();
     setMenus(response);
     setCategorias(responseCate);
-    console.log(categorias);
+  };
+
+  const setearImagen= async (e) => {
+    const url = await upload(e.target.files[0]);
+    menusEditados.img= url;
   };
 
   const eliminarMenu = (id) => {
@@ -34,7 +39,6 @@ const admi = () => {
     })
       .then((willDelete) => {
         if (willDelete) {
-          console.log(4);
           swal("Menu eliminada con Exito!", {
             icon: "success",
           });
@@ -90,8 +94,10 @@ const admi = () => {
             <h1 className='text-center'> Administrar Menus</h1>
             <Table striped responsive bordered hover variant="dark" className='mt-3'>
               <thead>
-                <tr>
+                <tr>{ edit ? <></> :
                   <th>Id</th>
+                  
+                  }
                   <th>Nombre</th>
                   <th>Descripcion</th>
                   <th>Imagen</th>
@@ -112,11 +118,10 @@ const admi = () => {
                     <>
 
                       <tr key={menus._id}>
-                        <td> <input type="text" name="_id" id="" disabled value={menusEditados._id} /></td>
                         <td> <input type="text" onChange={handleChange} name="nombre" id="" value={menusEditados.nombre} required /></td>
                         <td> <input type="text" onChange={handleChange} name="descripcion" id="" value={menusEditados.descripcion} /></td>
-                        <td><img src={menusEditados.img} alt={menusEditados.titulo} /></td>
-                        <td> $ <input type="number" name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
+                        <td><input type="file" name="img" onChange={setearImagen} id="" /></td>
+                        <td><input type="number" name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
                         <td>
                           <select name="categoria" id="" onChange={handleChange}>
                             {categorias.map(index => (
@@ -177,11 +182,12 @@ const admi = () => {
                   <tr key={menus._id}>
                     <td> <input type="text" onChange={handleChange} name="nombre" required id="" value={menusEditados.nombre} /></td>
                     <td> <input type="text" onChange={handleChange} name="descripcion" id="" value={menusEditados.descripcion} /></td>
-                    <td> <input type="file" name="img" id="" /></td>
+                    <td> <input type="file" name="img" id="" onChange={setearImagen} /></td>
                     <td><input type="number" name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
                     <td>
 
                       <select name="disponible" id="" onChange={handleChange} required>
+                      <option>Seleccione un Estado</option>
                         <option value="false">No Disponible</option>
                         <option value="true">Disponible</option>
 
@@ -189,8 +195,8 @@ const admi = () => {
                     </td>
                     <td>
 
-                      <select name="categoria" id="" onChange={handleChange}>
-                        <option value="">Seleccione una categoria</option>
+                      <select name="categoria" id="" onChange={handleChange} required>
+                        <option>Seleccione una categoria</option>
                         {
                           categorias.map(index => (
                             <option className='text-black' value={index._id} key={index.nombre}>{index.nombre}</option>
