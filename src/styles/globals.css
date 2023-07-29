@@ -18,7 +18,18 @@ nav {
     height: 110px;
 }
 
-
+#__next{
+  background-image: url("https://images2.alphacoders.com/816/81670.jpg");
+   
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.subadmi{
+  margin-top: 10px;
+  color:  #ea7f05;
+  text-shadow: 3px 3px 3px  #b15f02;
+}
 .icononav{
   margin: auto;
   font-size: large;
@@ -26,6 +37,7 @@ nav {
   width: 24px;
   height: 24px;
 }
+
 .subnav{
   display: flex;
   justify-content: center;
