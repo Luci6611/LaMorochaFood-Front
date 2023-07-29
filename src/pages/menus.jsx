@@ -69,7 +69,7 @@ const menus = () => {
                           {index.descripcion}
                         </Card.Title>
                         <Card.Title className="text-center">$ {index.precio}</Card.Title>
-                        <button type="button" className="bt">
+                        <a type="button" className="bt" target='_blank' href={`https://api.whatsapp.com/send?phone=541171044620&text=%C2%A1Hola!%20%F0%9F%98%80%20%C2%BFComo%20Estas%3F%20Quer%C3%ADa%20pedir%20este%20menu%20${index.nombre}%C3%BA%20%F0%9F%8D%94%20Muchas%20Gracias!%20%F0%9F%98%9C%F0%9F%98%8B`}>
                           <span className="button__text">Pedir</span>
                           <span className="button__icon">
                             <svg
@@ -88,7 +88,7 @@ const menus = () => {
                               <line y2="12" y1="12" x2="19" x1="5"></line>
                             </svg>
                           </span>
-                        </button>
+                        </a>
                       </Card.Body>
                     </Card>
                      </Fragment> : <></>
