@@ -24,9 +24,9 @@ const admi = () => {
     setCategorias(responseCate);
   };
 
-  const setearImagen= async (e) => {
+  const setearImagen = async (e) => {
     const url = await upload(e.target.files[0]);
-    menusEditados.img= url;
+    menusEditados.img = url;
   };
 
   const eliminarMenu = (id) => {
@@ -94,10 +94,10 @@ const admi = () => {
             <h1 className='text-center'> Administrar Menus</h1>
             <Table striped responsive bordered hover variant="dark" className='mt-3'>
               <thead>
-                <tr>{ edit ? <></> :
+                <tr>{edit ? <></> :
                   <th>Id</th>
-                  
-                  }
+
+                }
                   <th>Nombre</th>
                   <th>Descripcion</th>
                   <th>Imagen</th>
@@ -132,7 +132,7 @@ const admi = () => {
                             }
                           </select>
                         </td>
-                        <td> <button className='btn btn-success fw-bold' onClick={() => putMenus(menusEditados)}>Guardar</button>
+                        <td className='d-flex justify-content-center gap-2'> <button className='btn btn-success fw-bold' onClick={() => putMenus(menusEditados)}>Guardar</button>
 
                           <button className='btn btn-danger fw-bold' onClick={() => setEdit(false)}>Cancelar</button>
                         </td>
@@ -146,12 +146,16 @@ const admi = () => {
                         <td>{index._id}</td>
                         <td>{index.nombre}</td>
                         <td>{index.descripcion}</td>
-                        <td><img src={index.img} alt={index.titulo} /></td>
+                        <td><img src={index.img} alt={index.titulo} width={20} /></td>
                         <td>$ {index.precio}</td>
                         <td>{index.disponible === true ? "Disponible" : "No Disponible"}</td>
                         <td>{index.categoria.nombre}</td>
-                        <td> <button className='btn btn-success fw-bold' onClick={() => editarMenus(index)}>editar</button>
+                        <td className='d-flex gap-2 justify-content-center'>
                           <button className='btn btn-danger fw-bold ' onClick={() => eliminarMenu(index._id)}>eliminar</button>
+                          <button className='btn btn-success fw-bold' onClick={() => editarMenus(index)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                          </svg></button>
                         </td>
 
                       </tr>
@@ -187,7 +191,7 @@ const admi = () => {
                     <td>
 
                       <select name="disponible" id="" onChange={handleChange} required>
-                      <option>Seleccione un Estado</option>
+                        <option>Seleccione un Estado</option>
                         <option value="false">No Disponible</option>
                         <option value="true">Disponible</option>
 
@@ -205,7 +209,7 @@ const admi = () => {
 
                       </select>
                     </td>
-                    <td> <button className='btn btn-success fw-bold' onClick={() => createMenu(menusEditados)}>Crear</button>
+                    <td className='d-flex gap-2 justify-content-center'> <button className='btn btn-success fw-bold' onClick={() => createMenu(menusEditados)}>Crear</button>
                     </td>
 
                   </tr>

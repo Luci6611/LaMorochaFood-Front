@@ -40,7 +40,8 @@ export const createMenu = async (menu) => {
                 descripcion: menu.descripcion,
                 autor: menu.autor,
                 precio: menu.precio,
-                categoria: menu.categoria
+                categoria: menu.categoria,
+                img: menu.img
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
