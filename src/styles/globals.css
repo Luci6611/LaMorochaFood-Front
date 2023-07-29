@@ -17,10 +17,42 @@ nav {
     color: white !important;
     height: 110px;
 }
+.subnav{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  background-color: #b40f0f;
+  border: 5px solid #843217;
+}
+.subnav a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 10px;
+  color: #FFf;
+  font-size: 1.3rem;
+  text-transform: capitalize
+}
+.subnav a:hover{
+ color: #ffffff;
+ background-color: #cf2a2a;
+ transform: scale(2);
+ margin: 0 20px;
+ transition: all .3s;
+}
 .conteinerlogo{
   width: 100px;
   height:100px;
 }
+
+.nav-link{
+  box-shadow: 5px 5px 4px #775d48;
+  background-color:#e18316!important;
+  border: 2px solid #843217;
+  color: #fff;
+  font-weight: bold;
+}
+
 .navlogo{
   width:100%;
   height: 100%;
@@ -50,6 +82,11 @@ nav {
     width: 100%;
  
     height: 100%;
+}
+.card-titulocolor{
+  color: #ea7f05 !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 2px #4f4c4c;
 }
 .card-ofertas{
 
@@ -158,7 +195,8 @@ footer{
 .body-contacto{
     height: 100vh;
     width: 100%;
-    background-color: #65000B;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -314,7 +352,8 @@ footer{
 .body-sobre-nosotros{
     min-height: 100vh;
     width: 100%;
-    background-color: #65000B;
+    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -325,9 +364,10 @@ footer{
 
     width: 800px;
     height: auto;
-    background-color: #252020;
+    background:linear-gradient(rgb(129, 81, 32),rgb(30, 22, 22),rgb(60, 38, 8)) ;
+  
     border-top: #9e9c94 5px solid;
-    box-shadow: 0px 10px 15px 17px rgba(22, 22, 20, 0.1),0px 10px 15px -3px rgb(64, 64, 62);
+    box-shadow: 0px 10px 35px 37px rgba(246, 117, 5, 0.1),0px 10px 15px -3px rgb(64, 64, 62);
 
 }
 .contenedor-nosotros h1{
@@ -335,12 +375,12 @@ footer{
    
     font-weight: bold;
     margin-top: 10px;
-    color: #a9942fdb;
+    color: #e3c73bdb;
     text-align: center;
    
 }
 .hrsobrenosotros{
-    color: #e3b922;
+    color: #f7cb2a;
     width: 700px;
     margin: auto;
 }
@@ -350,7 +390,7 @@ footer{
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 3px solid #e3b922;
+    border: 3px solid #afa482;
 }
 
 .cont-img-sobrenosotros img {
@@ -359,13 +399,18 @@ footer{
     height: 100%;
     border-radius: 50%;
 }
+.cont-img-sobrenosotros img:hover{
+  transform:rotate(1440deg) ;
+  transition:2000ms all ;
+  
+}
 .contenedor-nosotros h2{
     font-size: 2.8rem;
 
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #a9942fdb;
+    color: #e3c73bdb;
     text-align: center;
    
 }
@@ -394,7 +439,12 @@ footer{
  font-size: 1.5rem;
 }
 
-
+.sobrenosotrosuno img:hover{
+  transform:rotate(360deg) ;
+  transform-origin: -1300px;
+  transition: 1000ms all ;
+  
+}
 .sobrenosotrosdos{
     display: flex;
     margin-bottom: 40px;
@@ -410,6 +460,12 @@ footer{
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
+}
+.sobrenosotrosdos img:hover{
+  transform:rotate(360deg) ;
+  transform-origin: 1300px;
+  transition: 1000ms all ;
+  
 }
 .textodos{
     width: 300px;
@@ -431,9 +487,38 @@ footer{
     height: 200px;
     border-radius: 50%;
 }
+.equipocontenedor img:hover{
+  transform:rotate(1440deg) ;
+  transition:2000ms all ;
+  
+}
 /* FIN ESTILOS DE SOBRE - NOSOTROS  */
 
-
+/* ESTILOS MENU INICIO */
+.main-menus{
+  width: 100%;
+  height: 100vh;
+  background:linear-gradient(rgb(129, 81, 32),rgb(30, 22, 22),rgb(60, 38, 8)) ;
+}
+.contenedor-card-menus{
+  width: 1000px;
+ 
+  margin: auto;
+padding: 10px;
+  display: flex;
+ 
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.border-c{
+  border: 2px rgb(177, 96, 59) solid !important;
+}
+.anima{
+  background-color: #4f1608;
+}
+/* FIN ESTILOS MENU */
 /*ESTILOS DE LOGIN */
 
 .login-conteiner{

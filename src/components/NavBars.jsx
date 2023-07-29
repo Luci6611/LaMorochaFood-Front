@@ -17,7 +17,7 @@ const NavBars = () => {
           <img className='navlogo' src="/Lamorochalogo2.jpg" alt="imagen logo" /></div>
           </Link>
           <Nav className="ms-auto text-light">
-            <Link className="ms-auto nav-link text-light" href="/">
+            <Link className="ms-auto nav-link text-light" id='lin' href="/">
               INICIOS
             </Link>
             <Link className="ms-auto nav-link text-light" href="/menus">

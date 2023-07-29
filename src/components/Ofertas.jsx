@@ -8,19 +8,19 @@ const Ofertas = () => {
         NUESTRAS MAS VENDIDAS
       </h3>
       <div className="p-3 d-flex flex-wrap justify-content-center gap-4 contenedor-ofer">
-        <Card id="cardd" className="card-ofertas">
+        <Card id="cardd" className="card-ofertas ">
           <div className="img-oferta">
             <Card.Img variant="top" src="/fondo4.jpg" />
           </div>
           <Card.Body className="d-flex justify-content-center flex-column">
-            <Card.Title className="text-center">Big MAC</Card.Title>
-            <Card.Title className="text-center">
+            <Card.Title className="text-center card-titulocolor">Big MAC</Card.Title>
+            <Card.Title className="text-center text-white">
               Nuestra hamburguesa con papas y gaseosa
             </Card.Title>
-            <Card.Title className="text-center">$123</Card.Title>
-            <button type="button" className="bt">
-              <span className="button__text">Pedir</span>
-              <span className="button__icon">
+            <Card.Title className="text-center text-white">$123</Card.Title>
+            <button type="button" class="bt">
+              <span class="button__text">Pedir</span>
+              <span class="button__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -46,11 +46,11 @@ const Ofertas = () => {
           </div>
 
           <Card.Body className="d-flex justify-content-center flex-column">
-            <Card.Title className="text-center">Big MAC</Card.Title>
-            <Card.Title className="text-center">
+            <Card.Title className="text-center card-titulocolor ">Big MAC</Card.Title>
+            <Card.Title className="text-center text-white">
               Nuestra hamburguesa con papas y gaseosa
             </Card.Title>
-            <Card.Title className="text-center">$123</Card.Title>
+            <Card.Title className="text-center text-white">$123</Card.Title>
 
             <button type="button" className="bt">
               <span className="button__text">Pedir</span>
@@ -78,15 +78,15 @@ const Ofertas = () => {
           <div className="img-oferta">
             <Card.Img variant="top" src="/fondo4.jpg" />
           </div>
-          <Card.Body className="d-flex justify-content-center flex-column">
-            <Card.Title className="text-center">Big MAC</Card.Title>
-            <Card.Title className="text-center">
+          <Card.Body className="d-flex justify-content-center flex-column ">
+            <Card.Title className="text-center card-titulocolor">Big MAC</Card.Title>
+            <Card.Title className="text-center text-white">
               Nuestra hamburguesa con papas y gaseosa
             </Card.Title>
-            <Card.Title className="text-center">$123</Card.Title>
-            <button type="button" className="bt">
-              <span className="button__text">Pedir</span>
-              <span className="button__icon">
+            <Card.Title className="text-center text-white">$123</Card.Title>
+            <button type="button" class="bt">
+              <span class="button__text">Pedir</span>
+              <span class="button__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
