@@ -14,7 +14,7 @@ const NavBars = () => {
         <Navbar.Collapse id="basic-navbar-nav">
         <Link href="/" className='nav-link'>
           <div className="conteinerlogo">
-          <img className='navlogo' src="/Lamorochalogo2.jpg" alt="" /></div>
+          <img className='navlogo' src="/Lamorochalogo2.jpg" alt="imagen logo" /></div>
           </Link>
           <Nav className="ms-auto text-light">
             <Link className="ms-auto nav-link text-light" href="/">
@@ -29,10 +29,13 @@ const NavBars = () => {
             <Link className="ms-auto nav-link text-light" href="/contacto">
             CONTACTO
             </Link>
+
+
+            { 
             <Link className="ms-auto nav-link text-light" href="/login">
               LOGIN
             </Link>
-
+}
           </Nav>
         </Navbar.Collapse>
       </Container>

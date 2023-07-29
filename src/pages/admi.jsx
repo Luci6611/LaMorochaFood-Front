@@ -1,7 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Cookies from 'universal-cookie';
+import { Table } from 'react-bootstrap';
+import swal from 'sweetalert';
+import { traerMenus } from '@/helpers/admi';
+
 
 const admi = () => {
+
+
+const [token, setToken]= useState(false);
+const [enable, setEnable]= useState(false);
+const [menus, setMenus]= useState([]);
+
+
+
+const traerData = async ()=>{
+     const response = await  traerMenus();
+     setMenus(response);
+
+     console.log(menus);
+}
+
+const eliminarMenu = (id) => {
+  swal({
+    title: "Esta seguro?",
+    text: "Esta accion es inrreversible!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+      if (willDelete) {
+        swal("Menu eliminada con Exito!", {
+          icon: "success",
+        });
+        eliminarMenu(id);
+      } else {
+        swal("Operacion cancelada con exito!", {
+          icon: "success",
+
+        });
+      }
+    });
+}
+ 
+const cookies = new Cookies();
+
+useEffect(() => {
+
+if (cookies.get("token")) {
+  setToken(true)
+}
+
+traerData()
+
+}, [eliminarMenu])
+
+
+
   return (
   <>
       <Head>
@@ -12,10 +68,49 @@ const admi = () => {
     <link rel="styles-sheets" href="../stylescomponents.css" />
   </Head>   
   
+{
+    token ? 
+<main className='container  p-3'>
 
-  <main>
+  <h1 className='text-center'> Administrar Menus</h1>
+<Table striped responsive bordered hover variant="dark" className='mt-3'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Imagen</th>
+          <th>Precio</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      { menus.map( index => (
+
+         <tr>
+          <td>{index._id}</td>
+          <td><input type="text" className={ enable ?   "bg-dark text-light disabled"   :  "bg-dark text-light"  }value={index.nombre}/></td>
+          <td>{index.descripcion}</td>
+          <td><img src={index.img} alt={index.titulo} /></td>
+          <td>$ {index.precio}</td>
+          <td>{index.disponible === true ?  "Disponible" : "No Disponible"}</td>
+          <td> <button className='btn btn-success' onClick={()=> setEnable(!enable)}>editar</button>
+          <button className='btn btn-danger ' onClick={()=> eliminarMenu(index._id) }>eliminar</button>
+          </td>
+
+        </tr>
+        ))
+   }
+      </tbody>
+    </Table>
     
   </main>
+    : <></>
+   }
+
+  
   
   </>
   )

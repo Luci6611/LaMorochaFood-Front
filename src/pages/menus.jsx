@@ -1,4 +1,5 @@
-import { traerMenus } from '@/helpers/admi';
+
+import { traerMenus } from '@/helpers/getOfertas';
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap';
@@ -9,9 +10,10 @@ const menus = () => {
 
 
    const traerData = async ()=>{
-   const data = await traerMenus();
-   setMenus(data);
-   console.log(data);
+   const response = await traerMenus();
+   setMenus(response);
+
+   console.log(menus);
 
     }
 
@@ -19,7 +21,7 @@ const menus = () => {
       
         traerData()
 
-    }, [])
+    }, [traerData])
     
     return (
 
@@ -32,18 +34,20 @@ const menus = () => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="styles-sheets" href="../stylescomponents.css" />
             </Head>
-            <h1>menus</h1>
 
-            <div className="container">
+            <main className='p-2'>
+<h1 className='text-center'>Menus</h1>
+
+            <div className="container d-flex flex-wrap gap-3">
                 {
-                     menus.map((index)=>{
+                     menus.map((index)=>(
 
-                        <Card id="cardd" className="card-ofertas" key={index.id}>
+                        <Card id="cardd" className="card-ofertas text-light" key={index.id}>
                         <div className="img-oferta">
                           <Card.Img variant="top" src={index.img} />
                         </div>
                         <Card.Body className="d-flex justify-content-center flex-column">
-                          <Card.Title className="text-center">{index.titulo}</Card.Title>
+                          <Card.Title className="text-center">{index.nombre}</Card.Title>
                           <Card.Title className="text-center">
                             {index.descripcion}
                           </Card.Title>
@@ -70,10 +74,14 @@ const menus = () => {
                           </button>
                         </Card.Body>
                       </Card>
-                     })
+                     ))
 
                 }
             </div>
+
+
+            </main>
+            
         </>
 
     )
