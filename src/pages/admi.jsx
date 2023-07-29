@@ -89,9 +89,9 @@ const admi = () => {
 
       {
         token ?
-          <main className='container  p-3'>
+          <main className='container  p-3 '>
 
-            <h1 className='text-center'> Administrar Menus</h1>
+            <h1 className='text-center subadmi'> Administrar Menus</h1>
             <Table striped responsive bordered hover variant="dark" className='mt-3'>
               <thead>
                 <tr>{edit ? <></> :
@@ -168,9 +168,9 @@ const admi = () => {
 
 
             {!edit ? <>
-              <h2 className="text-center">Crear Menu</h2>
+              <h2 className="text-center subadmi">Crear Menu</h2>
 
-              <Table striped responsive bordered hover variant="dark" className='mt-3'>
+              <Table striped responsive bordered  hover variant="dark" className='mt-3'>
                 <thead>
                   <tr>
                     <th>Nombre</th>
