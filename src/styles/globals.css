@@ -19,7 +19,7 @@ nav {
 }
 
 #__next{
-  background-image: url("/public/madera.jpg");
+  background-image: url("https://images2.alphacoders.com/816/81670.jpg");
    
   background-position: center;
   background-size: cover;
@@ -257,8 +257,7 @@ footer{
 .body-sobre-nosotros{
     min-height: 100vh;
     width: 100%;
-    background-image: url("/public/madera.jpg");
-   
+    background-image: url("https://images.alphacoders.com/551/55193.jpg");
    
     background-position: center;
     background-size: cover;
@@ -509,8 +508,7 @@ footer{
 .main-menus{
   width: 100%;
   height: auto;
-  background-image: url("/public/madera.jpg");
-   
+  background-image: url("https://images2.alphacoders.com/816/81670.jpg");
    
   background-position: center;
   background-size: cover;
@@ -541,8 +539,7 @@ padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     min-height: 100vh;
     width: 100%;
-    background-image: url("/public/madera.jpg");
-   
+    background-image: url("https://images2.alphacoders.com/816/81670.jpg");
    
     background-position: center;
     background-size: cover;
