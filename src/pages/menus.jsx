@@ -49,18 +49,19 @@ const menus = () => {
         ))
       }
       </div>
-      <main className='main-menus p-2'>
-
+      <main className='main-menus p-2  '>
+        
         {
           categorias.map(i => (
             <Fragment key={i.nombre}>
-              <h4 id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
-              <div className="contenedor-card-menus">
+              
+              <div className="contenedor-card-menus" id='contm'>
 
+              <h4 id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
                 {
                   menus.map((index) => (
                     index.categoria.nombre === i.nombre?
-                     <Fragment key={index.nombre}> 
+                    <Fragment key={index.nombre}> 
                         <Card id="cardd" className="card-ofertas text-light">
                       <div className="img-oferta">
                         <Card.Img variant="top" src={index.img} />

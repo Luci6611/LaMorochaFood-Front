@@ -235,47 +235,21 @@ footer{
 }
 
 
-/* ESTILOS DE CONTACTO  */
+/* ESTILOS DE MENUS  */
 
-/* .body-contacto{
-    height: 100vh;
-    width: 100vw;
-    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .body-contacto h1{
-      font-size: 2.8rem;
-    text-shadow: 2px 2px 4px   #1a1817;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      color:  #e3c5b9;
-      text-align: center;
-      text-transform: uppercase;
-  }
-.fondoprincipal{
-  text-align: center;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    width: 700px;
-    height: 900px;
-   border-radius: 100px 100px 0 0;
-   background:linear-gradient( #1b1614,rgb(62, 57, 52),rgb(16, 10, 7)) ;
-   box-shadow: 3px 3px 3px 3px  #5f382a;
+.main-menus{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.fondoprincipal p{
-
-  color:#fff;
-  font-size:1.4rem;
-} */
-/* FIN ESTILOS DE CONTACTO  */
+#contm{
+  display: flex;
+ background-color: #1b1919;
+ width: 100%;
+}
+/* FIN ESTILOS DE MENUS  */
 /* ESTILOS DE SOBRE - NOSOTROS  */
 
 .body-sobre-nosotros{
