@@ -8,7 +8,10 @@
     list-style: none;
     font-family: 'Merienda', cursive;
 }
-
+.navbar-toggler-icon{
+  background-color: #ae5f04;
+  border-radius: 5px;
+}
 nav {
     background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
     border-bottom: 4px solid    #ea7f05;
@@ -17,7 +20,14 @@ nav {
     color: white !important;
     height: 110px;
 }
+.control-res{
+  position: relative;
+  z-index: 1000;
+  background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+height: auto;
 
+
+}
 #__next{
   background-image: url("https://images2.alphacoders.com/816/81670.jpg");
    
@@ -25,6 +35,20 @@ nav {
   background-size: cover;
   background-attachment: fixed;
 }
+/* RESPONSIVE DEL NAV */
+@media only screen and (max-width:990px){
+
+  .conteinerlogo{
+   margin:0 auto 10px auto;
+
+  }
+  #lin{
+    margin: auto;
+    font-size: 1.2rem;
+   
+  }
+}
+/* RESPONSIVE DEL NAV */
 .subadmi{
   margin-top: 10px;
   color:  #ea7f05;

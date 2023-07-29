@@ -5,6 +5,7 @@ import { Table } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { createMenu, eliminarMenus, putMenus, traerCategorias, traerMenus } from '@/helpers/admi';
 import { upload } from '@/firebase/config';
+import NavBars from '@/components/NavBars'
 
 
 const admi = () => {
@@ -86,6 +87,7 @@ const admi = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="styles-sheets" href="../stylescomponents.css" />
       </Head>
+      <NavBars/>
 
       {
         token ?

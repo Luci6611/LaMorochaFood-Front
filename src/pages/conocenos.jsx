@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import NavBars from '@/components/NavBars'
+
 
 const conocenos = () => {
   return (
@@ -11,6 +13,7 @@ const conocenos = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="styles-sheets" href="../stylescomponents.css" />
       </Head>
+      <NavBars/>
       <div className='body-sobre-nosotros '>
         <div className="contenedor-nosotros">
           <h1>La Morocha</h1>

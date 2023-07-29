@@ -4,6 +4,7 @@ import { traerMenus } from '@/helpers/getOfertas';
 import Head from 'next/head'
 import React, { Fragment, useEffect, useState } from 'react'
 import Card from "react-bootstrap/Card";
+import NavBars from '@/components/NavBars'
 
 const menus = () => {
 
@@ -38,6 +39,7 @@ const menus = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="styles-sheets" href="../stylescomponents.css" />
       </Head>
+      <NavBars/>
       <div className="subnav">{
         categorias.map(index => (
           <>
