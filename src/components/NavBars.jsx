@@ -26,9 +26,7 @@ const NavBars = () => {
               <Link className="ms-auto nav-link text-light" href="/conocenos">
                 CONOCENOS!
               </Link>
-              <Link className="ms-auto nav-link text-light" href="#contacto">
-                CONTACTO
-              </Link>
+         
 
 
               {

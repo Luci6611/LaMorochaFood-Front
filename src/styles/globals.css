@@ -255,11 +255,12 @@ footer{
 /* ESTILOS DE SOBRE - NOSOTROS  */
 
 .body-sobre-nosotros{
+  overflow: hidden;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url("https://images.alphacoders.com/551/55193.jpg");
    
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-attachment: fixed;
   
@@ -284,22 +285,22 @@ footer{
    
     font-weight: bold;
     margin-top: 10px;
-    color: #e3c73bdb;
+    color: #f0a020db;
     text-align: center;
    
 }
 .hrsobrenosotros{
-    color: #f7cb2a;
+  color: #f0a020db;
     width: 700px;
     margin: auto;
 }
 
 .cont-img-sobrenosotros{
     margin: 30px auto;
-    width: 300px;
+    width: 400px;
     height: 300px;
     border-radius: 50%;
-    border: 3px solid #afa482;
+    border: 3px solid #d6a920;
     overflow: hidden;
 }
 
@@ -311,7 +312,7 @@ footer{
 }
 .cont-img-sobrenosotros img:hover{
   transform:rotate(1440deg) ;
-  transition:2000ms all ;
+  transition:2000ms all;
   
 }
 .contenedor-nosotros h2{
@@ -320,7 +321,7 @@ footer{
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #e3c73bdb;
+    color: #f0a020db;
     text-align: center;
    
 }
@@ -455,7 +456,7 @@ footer{
 
 .cont-img-sobrenosotros img {
   max-width: 100%;
-  
+  width: 100%;
   object-fit: cover;
   height:100%;
   border-radius: 50%;
@@ -499,6 +500,66 @@ footer{
   margin-bottom: 20px;
   height: auto;
   object-fit: cover;
+  border-radius: 50%;
+}}
+
+@media only screen and (max-width:540px){
+
+  .body-sobre-nosotros{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+  }
+  .contenedor-nosotros{
+    max-width: 100%;
+  margin: 0% ;
+
+    }
+  .hamburguesauno-nosotros{
+    max-width: 80%;
+    margin: 30px auto;
+    height: auto;
+   }
+   .sobrenosotrosuno .imguno{
+   width: 100%;
+   height: 100%;
+ 
+   object-fit: cover;}
+
+.hamburguesdos-nosotros{
+  max-width: 80%;
+  margin: 30px auto;
+  height: auto;
+ }
+ .sobrenosotrosdos img{
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;}
+
+.equipocontenedor img{
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.cont-img-sobrenosotros{
+  margin: 30px auto;
+  width: 70%;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #afa482;
+  overflow: hidden;
+}
+
+.cont-img-sobrenosotros img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height:100%;
   border-radius: 50%;
 }}
 /* Responsive sobre nosotros */
