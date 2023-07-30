@@ -165,7 +165,8 @@ height: auto;
 
 .bt .button__text {
   transform: translateX(30px);
-  color: #e3d0d0;
+  font-weight: bold;
+  color: #fcfcfc;
   text-shadow: 4px 4px 4px #000;
   font-weight: 600;
 }
