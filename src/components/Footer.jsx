@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className='w-100  p-3 footer text-light  position-relative bottom-0'>
+    <footer className='container-fluid  p-3 footer text-light  position-relative bottom-0'>
         <div className='container d-flex justify-content-around'>
          <ol id='contacto'>
           <h2>contacto</h2>

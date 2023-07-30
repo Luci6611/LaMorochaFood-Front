@@ -1,13 +1,12 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import NavBars from '@/components/NavBars'
-
 
 
 const Carouseles = () => {
-    return (<>
-        <div className=''><NavBars/>
-        <Carousel className='carousel '  >
+    return (
+      <>
+        <div>
+        <Carousel className='carousel'>
             <Carousel.Item >
                 <img
                     className="d-block w-100 h-10 carrimg"

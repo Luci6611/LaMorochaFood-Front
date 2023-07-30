@@ -3,7 +3,6 @@ import { useState } from 'react';
 import swal from 'sweetalert';
 import Cookies from 'universal-cookie';
 import { logins } from '../helpers/auth';
-import NavBars from '@/components/NavBars'
 
 
 const login = () => {
@@ -57,7 +56,6 @@ const login = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="styles-sheets" href="../stylescomponents.css" />
       </Head>
-      <NavBars/>
       <div className='login-conteiner'>
         <div className="login-cuerpo">
           <p>Iniciar sesion</p>

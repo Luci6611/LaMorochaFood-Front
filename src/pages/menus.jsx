@@ -4,7 +4,6 @@ import { traerMenus } from '@/helpers/getOfertas';
 import Head from 'next/head'
 import React, { Fragment, useEffect, useState } from 'react'
 import Card from "react-bootstrap/Card";
-import NavBars from '@/components/NavBars'
 
 const menus = () => {
 
@@ -39,29 +38,30 @@ const menus = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="styles-sheets" href="../stylescomponents.css" />
       </Head>
-      <NavBars/>
-      <div className="subnav">{
-        categorias.map(index => (
-          <>
-            <a href="#" onClick={() => setSeccion(index.nombre)} key={index._id}>{index.nombre}</a>
-          </>
-
-        ))
-      }
-      </div>
-      <main className='main-menus p-2  '>
+      <div className="subnav container-fluid ">
         
+          <div className='container d-flex flex-wrap justify-content-center gap-2'>
+        {  categorias.map(index => (
+            <a href="#" onClick={() => setSeccion(index.nombre)} key={index._id}>{index.nombre}</a>
+          
+          ))}
+          </div>
+
+        
+      
+      </div>
+      <main className='main-menus p-2 container-fluid'>
+
         {
           categorias.map(i => (
             <Fragment key={i.nombre}>
-              
-              <div className="contenedor-card-menus" id='contm'>
-
               <h4 id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
+              <div className="contenedor-card-menus container">
+
                 {
                   menus.map((index) => (
                     index.categoria.nombre === i.nombre?
-                    <Fragment key={index.nombre}> 
+                     <Fragment key={index.nombre}> 
                         <Card id="cardd" className="card-ofertas text-light">
                       <div className="img-oferta">
                         <Card.Img variant="top" src={index.img} />
