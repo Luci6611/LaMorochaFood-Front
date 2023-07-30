@@ -27,7 +27,7 @@ const Ofertas = () => {
       <div className="p-3 d-flex flex-wrap justify-content-center gap-4 contenedor-ofer">
         <Card id="cardd" className="card-ofertas ">
           <div className="img-oferta">
-            <Card.Img variant="top" src="/fondo4.jpg" alt="mas vendido" />
+            <Card.Img variant="top" src="/fondo4.jpg" alt="masVendido" />
           </div>
           <Card.Body className="d-flex justify-content-center flex-column">
             <Card.Title className="text-center card-titulocolor">Big MAC</Card.Title>
