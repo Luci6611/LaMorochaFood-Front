@@ -10,21 +10,21 @@ const Carouseles = () => {
             <Carousel.Item >
                 <img
                     className="d-block w-100 h-10 carrimg"
-                    src="https://images7.alphacoders.com/128/1286471.jpg"
+                    src="carousel1.jpg"
                     alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item >
                 <img
                     className="d-block w-100 h-25  carrimg"
-                    src="https://images6.alphacoders.com/908/908160.jpg"
+                    src="carousel2.jpg"
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100 carrimg"
-                    src="https://images6.alphacoders.com/870/870777.jpg"
+                    src="carousel3.jpg"
                     alt="Third slide"
                 />
             </Carousel.Item>
@@ -35,3 +35,37 @@ const Carouseles = () => {
 
 
 export default Carouseles
+
+
+
+/* 
+ <Carousel className='carousel'>
+            <Carousel.Item >
+                <Image
+                    className="d-block w-100 h-10 carrimg"
+                    src="/carousel1.jpg"
+                    alt="First slide"
+                    width={100}
+                    height={25}
+                />
+            </Carousel.Item>
+            <Carousel.Item >
+                <Image
+                    className="d-block w-100 h-25  carrimg"
+                    src="/carousel2.jpg"
+                    alt="Second slide"
+                    width={100}
+                    height={25}
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <Image
+                    className="d-block w-100 carrimg"
+                    src="/carousel3.jpg"
+                    alt="Third slide"
+                    width={100}
+                    height={25}
+                />
+            </Carousel.Item>
+        </Carousel>
+ */
