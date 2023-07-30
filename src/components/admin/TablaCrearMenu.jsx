@@ -1,4 +1,5 @@
 import { DataContext } from '@/context/DataContext';
+import { upload } from '@/firebase/config';
 import { createMenu, traerCategorias } from '@/helpers/admi'
 import React, { useContext, useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
@@ -68,10 +69,13 @@ const TablaCrearMenu = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td> <input type="text" className='bg-dark text-light p-1' onChange={handleChange} name="nombre" required id="" /></td>
-                        <td> <input type="text" className='bg-dark text-light p-1' onChange={handleChange} name="descripcion" id="" /></td>
-                        <td> <input type="file" className='bg-dark text-light p-1' name="img" id="" onChange={setearImagen} /></td>
-                        <td> <input type="number" className='bg-dark text-light p-1'  name="precio" id="" onChange={handleChange} /></td>
+                        <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="nombre" required id="" /></td>
+                        <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="descripcion" id="" /></td>
+                        <td> <input type="file" className='bg-dark text-light p-2' name="img" id="" onChange={setearImagen} /></td>
+                        <td> <input type="number" className='bg-dark text-light p-2'  name="precio" min={0} id="" onChange={handleChange} />
+                        
+
+                        </td>
                         <td>
 
                             <select name="disponible" className='bg-dark text-light p-2' id="" onChange={handleChange} required>

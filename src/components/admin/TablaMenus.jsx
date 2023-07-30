@@ -1,43 +1,47 @@
 import { DataContext } from '@/context/DataContext';
-import { eliminarMenus, traerMenus } from '@/helpers/admi';
+import { cambiarDisponibilidadMenu, eliminarMenus, traerMenus } from '@/helpers/admi';
 import React, { useContext, useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import swal from 'sweetalert';
 
 const TablaMenus = () => {
 
-    const [menus, setMenus]= useState([]);
-    const { edit, setEdit , menusEditados, setMenusEditados,  creado, setCreados  } = useContext(DataContext);
-    
-    
-  const eliminarMenu = (id) => {
-    swal({
-      title: "Esta seguro?",
-      text: "Esta accion es inrreversible!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Menu eliminada con Exito!", {
-            icon: "success",
-          });
-          eliminarMenus(id);
-        } else {
-          swal("Operacion cancelada con exito!", {
-            icon: "success",
+    const [menus, setMenus] = useState([]);
+    const { edit, setEdit, menusEditados, setMenusEditados, creado, setCreados } = useContext(DataContext);
 
-          });
-        }
-      });
-  };
+
+    const eliminarMenu = (id) => {
+        swal({
+            title: "Esta seguro?",
+            text: "Esta accion es inrreversible!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Menu eliminada con Exito!", {
+                        icon: "success",
+                    });
+                    eliminarMenus(id);
+                } else {
+                    swal("Operacion cancelada con exito!", {
+                        icon: "success",
+
+                    });
+                }
+            });
+    };
 
     const editarMenus = (datos) => {
         setEdit(true);
         setMenusEditados(datos);
     };
-    
+
+    const cambiarEstado = (id, estado) => {
+        cambiarDisponibilidadMenu(id, estado);
+    };
+
     const traerMenu = async () => {
         const response = await traerMenus();
         setMenus(response);
@@ -45,7 +49,7 @@ const TablaMenus = () => {
 
     useEffect(() => {
         traerMenu();
-    }, [eliminarMenu, creado])
+    }, [eliminarMenu, creado, cambiarEstado])
 
     return (
         <div>
@@ -61,6 +65,7 @@ const TablaMenus = () => {
                         <th className='text-center'>Estado</th>
                         <th className='text-center'>Categoria</th>
                         <th className='text-center'>Opciones</th>
+                        <th className="text-center">Cambiar Estado</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,6 +90,20 @@ const TablaMenus = () => {
                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                         <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                     </svg></button>
+                                </td>
+                                <td className='text-center gap-2 fa-bold'>
+                                    {index.disponible ?
+                                        <button className='btn btn-danger' onClick={() => cambiarEstado(index._id, false)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                                <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
+                                            </svg>
+                                        </button> :
+                                        <button className='btn btn-success' onClick={() => cambiarEstado(index._id, true)}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                                <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
+                                            </svg>
+                                        </button>
+                                    }
                                 </td>
 
                             </tr>
