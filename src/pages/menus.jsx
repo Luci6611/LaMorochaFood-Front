@@ -64,7 +64,7 @@ const menus = () => {
                      <Fragment key={index.nombre}> 
                         <Card id="cardd" className="card-ofertas text-light">
                       <div className="img-oferta">
-                        <Card.Img variant="top" src={index.img} />
+                        <Card.Img variant="top" src={index.img} alt={index.nombre} />
                       </div>
                       <Card.Body className="d-flex justify-content-center flex-column">
                         <Card.Title className="text-center">{index.nombre}</Card.Title>

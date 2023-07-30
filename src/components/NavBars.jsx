@@ -64,13 +64,13 @@ const NavBars = () => {
                 <img className='navlogo' src="/Lamorochalogo2.png" alt="logo" /></div>
             </Link>
             <Nav className="ms-auto text-light justify-content-end">
-              <Link className="ms-auto nav-link text-light" id='lin' href="/">
+              <Link className="ms-auto nav-link text-light lin"  href="/">
                 INICIO
               </Link>
-              <Link className="ms-auto nav-link text-light" id='lin' href="/menus">
+              <Link className="ms-auto nav-link text-light lin"  href="/menus">
                 MENUS
               </Link>
-              <Link className="ms-auto nav-link text-light" id='lin' href="/conocenos">
+              <Link className="ms-auto nav-link text-light lin"  href="/conocenos">
                 CONOCENOS!
               </Link>
         

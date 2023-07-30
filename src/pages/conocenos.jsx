@@ -35,9 +35,9 @@ const conocenos = () => {
           </div>
           <h2>Nuestro equipo</h2>
           <div className="equipocontenedor">
-            <img src="/personauno.jpg" alt="" />
-            <img src="/personauno.jpg" alt="" />
-            <img src="/personauno.jpg" alt="" />
+            <img src="/personauno.jpg" alt="empleado1" />
+            <img src="/personauno.jpg" alt="empleado2" />
+            <img src="/personauno.jpg" alt="empleado3" />
           </div>
         </div>
 
