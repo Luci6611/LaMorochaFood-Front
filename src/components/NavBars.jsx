@@ -59,8 +59,8 @@ const NavBars = () => {
  
       <Navbar expand="lg" className="rounded-bottom bg-darkblue text-bg-danger control-res ">
         <Container className=' w-100'>
-          <Navbar.Toggle aria-controls="basic-navbar-nav " />
-          <Navbar.Collapse id="basic-navbar-nav " >
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+          <Navbar.Collapse id="basic-navbar-nav">
             <Link href="/" className='nav-link'>
               <div className="conteinerlogo">
                 <img className='navlogo' src="/Lamorochalogo2.png" alt="logo" /></div>
