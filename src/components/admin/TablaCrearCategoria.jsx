@@ -14,11 +14,11 @@ const TablaCrearCategoria = () => {
         setCategoriasCreate((prevState) => ({ ...prevState, [name]: value }));
     };
 
-    
+
 
     return (
         <div className='mt-5'>
-            <h1 className="text-center subadmi">Crear Categoria</h1>
+            <h1 className="text-center subadmi">Crear Categoria de Menu</h1>
 
             <Table striped responsive bordered hover variant="dark" className='mt-3'>
                 <thead>
@@ -30,7 +30,7 @@ const TablaCrearCategoria = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className='text-center'> <input type="text" onChange={handleChange} name="nombre" required id="" className='bg-dark text-light'/></td>
+                        <td className='text-center'> <input type="text" onChange={handleChange} name="nombre" required id="" className='bg-dark text-light' /></td>
 
                         <td className='text-center'>
                             <select name="estado" id="" onChange={handleChange} required className='bg-dark text-light p-2'>

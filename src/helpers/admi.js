@@ -78,7 +78,7 @@ export const createMenu = async (menu) => {
     const data = await response.json();
     return data.msg;
 
-   
+
 };
 
 export const putMenus = async (menu) => {
@@ -105,6 +105,28 @@ export const putMenus = async (menu) => {
 
 
     return data.msg;
+};
+
+export const cambiarDisponibilidadMenu = async (id, estado) => {
+    const response = await fetch(`${url}productos/${id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                _id: id,
+                disponible: estado
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": cookie.get('token'),
+            },
+        }
+
+    );
+
+    const data = await response.json();
+
+
+    return data;
 };
 
 export const eliminarMenus = async (id) => {
