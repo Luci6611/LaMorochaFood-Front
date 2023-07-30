@@ -30,6 +30,30 @@ export const traerCategorias = async () => {
     return data.categorias;
 };
 
+export const createCate = async (categ) => {
+    const response = await fetch(`${url}categorias`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                nombre: categ.nombre,
+                estado: categ.estado,
+                usuario: categ.nombreUsuario
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": cookie.get('token'),
+            },
+        }
+
+    );
+
+    const data = await response.json();
+
+
+    return data.msg;
+
+};
+
 export const createMenu = async (menu) => {
     const response = await fetch(`${url}productos`,
         {
@@ -52,7 +76,7 @@ export const createMenu = async (menu) => {
     );
 
     const data = await response.json();
-    return data;
+    return data.msg;
 
    
 };
@@ -64,7 +88,7 @@ export const putMenus = async (menu) => {
             body: JSON.stringify({
                 _id: menu._id,
                 categoria: menu.categoria,
-                titulo: menu.titulo,
+                nombre: menu.nombre,
                 descripcion: menu.descripcion,
                 autor: menu.autor,
                 precio: menu.precio,
@@ -77,8 +101,10 @@ export const putMenus = async (menu) => {
 
     );
 
+    const data = await response.json();
 
-    return response;
+
+    return data.msg;
 };
 
 export const eliminarMenus = async (id) => {

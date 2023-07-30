@@ -1,67 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Cookies from 'universal-cookie';
-import { Table } from 'react-bootstrap';
-import swal from 'sweetalert';
-import { createMenu, eliminarMenus, putMenus, traerCategorias, traerMenus } from '@/helpers/admi';
-import { upload } from '@/firebase/config';
+import TablaCrearCategoria from '@/components/admin/TablaCrearCategoria';
+import TablaCrearMenu from '@/components/admin/TablaCrearMenu';
+import TablaEditarMenus from '@/components/admin/TablaEditarMenus';
+import TablaMenus from '@/components/admin/TablaMenus';
+import { DataContext } from '@/context/DataContext';
 
 
 const admi = () => {
 
 
   const [token, setToken] = useState(false);
-  const [edit, setEdit] = useState(false);
-  const [menus, setMenus] = useState([]);
-  const [categorias, setCategorias] = useState([]);
-  const [menusEditados, setMenusEditados] = useState([]);
-
-
-  const traerData = async () => {
-    const response = await traerMenus();
-    const responseCate = await traerCategorias();
-    setMenus(response);
-    setCategorias(responseCate);
-  };
-
-  const setearImagen = async (e) => {
-    const url = await upload(e.target.files[0]);
-    menusEditados.img = url;
-  };
-
-  const eliminarMenu = (id) => {
-    swal({
-      title: "Esta seguro?",
-      text: "Esta accion es inrreversible!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Menu eliminada con Exito!", {
-            icon: "success",
-          });
-          eliminarMenus(id);
-        } else {
-          swal("Operacion cancelada con exito!", {
-            icon: "success",
-
-          });
-        }
-      });
-  };
-
-  const editarMenus = (datos) => {
-    setEdit(true);
-    setMenusEditados(datos);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setMenusEditados((prevState) => ({ ...prevState, [name]: value }));
-    console.log(menusEditados);
-  };
+  const { edit, setEdit , menusEditados, setMenusEditados } = useContext(DataContext);
+  
 
   const cookies = new Cookies();
 
@@ -71,9 +23,7 @@ const admi = () => {
       setToken(true);
     }
 
-    traerData();
-
-  }, [eliminarMenu, menusEditados]);
+  }, [ menusEditados]);
 
 
 
@@ -89,135 +39,22 @@ const admi = () => {
 
       {
         token ?
-          <main className='container  p-3 '>
 
-            <h1 className='text-center subadmi'> Administrar Menus</h1>
-            <Table striped responsive bordered hover variant="dark" className='mt-3'>
-              <thead>
-                <tr>{edit ? <></> :
-                  <th>Id</th>
+            <main className='container  p-3 '>
+              {edit ?
+                <TablaEditarMenus />
+                :
+                <TablaMenus />
+              }
+              {!edit ? <>
 
-                }
-                  <th>Nombre</th>
-                  <th>Descripcion</th>
-                  <th>Imagen</th>
-                  <th>Precio</th>
+                <TablaCrearMenu />
 
-                  {edit ? <></> :
-                    <th>Estado</th>
-                  }
-                  <th>Categoria</th>
-                  <th>Opciones</th>
-                </tr>
-              </thead>
-              <tbody>
+                <TablaCrearCategoria />
+              </> : <></>
+              }
+            </main>
 
-                {
-
-                  edit ?
-                    <>
-
-                      <tr key={menus._id}>
-                        <td> <input type="text" onChange={handleChange} name="nombre" id="" value={menusEditados.nombre} required /></td>
-                        <td> <input type="text" onChange={handleChange} name="descripcion" id="" value={menusEditados.descripcion} /></td>
-                        <td><input type="file" name="img" onChange={setearImagen} id="" /></td>
-                        <td><input type="number" name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
-                        <td>
-                          <select name="categoria" id="" onChange={handleChange}>
-                            {categorias.map(index => (
-                              <option value={index._id} key={index.nombre}>{index.nombre}</option>
-                            )
-                            )
-
-                            }
-                          </select>
-                        </td>
-                        <td className='d-flex justify-content-center gap-2'> <button className='btn btn-success fw-bold' onClick={() => putMenus(menusEditados)}>Guardar</button>
-
-                          <button className='btn btn-danger fw-bold' onClick={() => setEdit(false)}>Cancelar</button>
-                        </td>
-
-                      </tr>
-                    </>
-
-                    :
-                    menus.map(index => (
-                      <tr key={index._id}>
-                        <td>{index._id}</td>
-                        <td>{index.nombre}</td>
-                        <td>{index.descripcion}</td>
-                        <td><img src={index.img} alt={index.titulo} width={20} /></td>
-                        <td>$ {index.precio}</td>
-                        <td>{index.disponible === true ? "Disponible" : "No Disponible"}</td>
-                        <td>{index.categoria.nombre}</td>
-                        <td className='d-flex gap-2 justify-content-center'>
-                          <button className='btn btn-danger fw-bold ' onClick={() => eliminarMenu(index._id)}>eliminar</button>
-                          <button className='btn btn-success fw-bold' onClick={() => editarMenus(index)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                            <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                          </svg></button>
-                        </td>
-
-                      </tr>
-
-
-                    ))
-                }
-              </tbody>
-            </Table>
-
-
-            {!edit ? <>
-              <h2 className="text-center subadmi">Crear Menu</h2>
-
-              <Table striped responsive bordered  hover variant="dark" className='mt-3'>
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Imagen</th>
-                    <th>Precio</th>
-                    <th>Estado</th>
-                    <th>Categoria</th>
-                    <th>Opciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr key={menus._id}>
-                    <td> <input type="text" onChange={handleChange} name="nombre" required id="" value={menusEditados.nombre} /></td>
-                    <td> <input type="text" onChange={handleChange} name="descripcion" id="" value={menusEditados.descripcion} /></td>
-                    <td> <input type="file" name="img" id="" onChange={setearImagen} /></td>
-                    <td><input type="number" name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
-                    <td>
-
-                      <select name="disponible" id="" onChange={handleChange} required>
-                        <option>Seleccione un Estado</option>
-                        <option value="false">No Disponible</option>
-                        <option value="true">Disponible</option>
-
-                      </select>
-                    </td>
-                    <td>
-
-                      <select name="categoria" id="" onChange={handleChange} required>
-                        <option>Seleccione una categoria</option>
-                        {
-                          categorias.map(index => (
-                            <option className='text-black' value={index._id} key={index.nombre}>{index.nombre}</option>
-                          ))
-                        }
-
-                      </select>
-                    </td>
-                    <td className='d-flex gap-2 justify-content-center'> <button className='btn btn-success fw-bold' onClick={() => createMenu(menusEditados)}>Crear</button>
-                    </td>
-
-                  </tr>
-                </tbody>
-              </Table>
-            </> : <></>
-            }
-          </main>
           : <></>
       }
 
