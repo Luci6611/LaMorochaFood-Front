@@ -1,10 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { lazy, useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Cookies from 'universal-cookie';
-import TablaCrearCategoria from '@/components/admin/TablaCrearCategoria';
-import TablaCrearMenu from '@/components/admin/TablaCrearMenu';
-import TablaEditarMenus from '@/components/admin/TablaEditarMenus';
-import TablaMenus from '@/components/admin/TablaMenus';
+const TablaCrearCategoria = lazy(() => import('@/components/admin/TablaCrearCategoria'), {
+  fallback: () => <div>Cargando...</div>,
+});
+const TablaCrearMenu = lazy(() => import('@/components/admin/TablaCrearMenu'), {
+  fallback: () => <div>Cargando...</div>,
+});
+
+import TablaEditarMenus from'@/components/admin/TablaEditarMenus';
+
+const TablaMenus = lazy(() => import('@/components/admin/TablaMenus'), {
+  fallback: () => <div>Cargando...</div>,
+});
+
 import { DataContext } from '@/context/DataContext';
 
 
