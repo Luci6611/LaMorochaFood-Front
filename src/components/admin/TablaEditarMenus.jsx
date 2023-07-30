@@ -1,4 +1,5 @@
 import { DataContext } from '@/context/DataContext';
+import { upload } from '@/firebase/config';
 import { putMenus, traerCategorias } from '@/helpers/admi'
 import React, { useContext, useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
@@ -70,7 +71,7 @@ const TablaEditarMenus = () => {
                         <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="nombre" id="" value={menusEditados.nombre} required /></td>
                         <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="descripcion" id="" value={menusEditados.descripcion} /></td>
                         <td> <input type="file" className='bg-dark text-light p-2' name="img" onChange={setearImagen} id="" /></td>
-                        <td> <input type="number" className='bg-dark text-light p-2' name="precio" id="" onChange={handleChange} value={menusEditados.precio} /></td>
+                        <td> <input type="number" className='bg-dark text-light p-2' name="precio" id="" min={0} onChange={handleChange} value={menusEditados.precio} /></td>
                         <td>
                           <select name="categoria" className='bg-dark text-light p-2' id="" onChange={handleChange}>
                             {categorias.map(index => (

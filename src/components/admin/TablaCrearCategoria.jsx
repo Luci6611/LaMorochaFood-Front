@@ -1,6 +1,7 @@
 import { createCate, traerCategorias } from '@/helpers/admi';
 import React, { useState } from 'react'
 import { Table } from 'react-bootstrap'
+import swal from 'sweetalert';
 
 
 const TablaCrearCategoria = () => {
@@ -14,6 +15,21 @@ const TablaCrearCategoria = () => {
         setCategoriasCreate((prevState) => ({ ...prevState, [name]: value }));
     };
 
+
+    const crearCategorias = async ()=>{
+         const response = await createCate(categoriasCreate);
+
+         if (response === "Categoria creada correctamente") {
+            swal(response, {
+              icon: "success",
+            });
+          } else {
+            swal(response, {
+              icon: "warning",
+  
+            });
+          };
+    };
 
 
     return (
@@ -30,7 +46,7 @@ const TablaCrearCategoria = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className='text-center'> <input type="text" onChange={handleChange} name="nombre" required id="" className='bg-dark text-light' /></td>
+                        <td className='text-center'> <input type="text" onChange={handleChange} name="nombre" required id="" className='bg-dark text-light p-2' /></td>
 
                         <td className='text-center'>
                             <select name="estado" id="" onChange={handleChange} required className='bg-dark text-light p-2'>
@@ -41,7 +57,7 @@ const TablaCrearCategoria = () => {
                         </td>
 
 
-                        <td className='d-flex gap-2 justify-content-center'> <button className='btn btn-success fw-bold' title='crear categoria' onClick={() => createCate(categoriasCreate)}>Crear</button>
+                        <td className='d-flex gap-2 justify-content-center'> <button className='btn btn-success fw-bold' title='crear categoria' onClick={() => crearCategorias()}>Crear</button>
                         </td>
 
                     </tr>

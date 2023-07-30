@@ -49,7 +49,6 @@ export const createCate = async (categ) => {
 
     const data = await response.json();
 
-
     return data.msg;
 
 };

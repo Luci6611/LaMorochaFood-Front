@@ -21,6 +21,8 @@ const NavBars = () => {
 
       if (cookie.get("token")) {
         setToken(true);
+      } else {
+        location.replace("/");
       }
     };
 
