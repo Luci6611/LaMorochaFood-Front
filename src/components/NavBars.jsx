@@ -54,11 +54,11 @@ const NavBars = () => {
 
   return (
     <>
-
-      <Navbar expand="lg" className="rounded-bottom bg-darkblue text-bg-danger">
-        <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+ 
+      <Navbar expand="lg" className="rounded-bottom bg-darkblue text-bg-danger control-res ">
+        <Container className=' w-100'>
+          <Navbar.Toggle aria-controls="basic-navbar-nav " />
+          <Navbar.Collapse id="basic-navbar-nav " >
             <Link href="/" className='nav-link'>
               <div className="conteinerlogo">
                 <img className='navlogo' src="/Lamorochalogo2.png" alt="logo" /></div>
@@ -67,15 +67,13 @@ const NavBars = () => {
               <Link className="ms-auto nav-link text-light" id='lin' href="/">
                 INICIO
               </Link>
-              <Link className="ms-auto nav-link text-light" href="/menus">
+              <Link className="ms-auto nav-link text-light" id='lin' href="/menus">
                 MENUS
               </Link>
-              <Link className="ms-auto nav-link text-light" href="/conocenos">
+              <Link className="ms-auto nav-link text-light" id='lin' href="/conocenos">
                 CONOCENOS!
               </Link>
-              <Link className="ms-auto nav-link text-light" href="#contacto">
-                CONTACTO
-              </Link>
+        
 
 
               {

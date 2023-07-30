@@ -8,7 +8,10 @@
     list-style: none;
     font-family: 'Merienda', cursive;
 }
-
+.navbar-toggler-icon{
+  background-color: #ae5f04;
+  border-radius: 5px;
+}
 nav {
     background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
     border-bottom: 4px solid    #ea7f05;
@@ -17,7 +20,14 @@ nav {
     color: white !important;
     height: 110px;
 }
+.control-res{
+  position: relative;
+  z-index: 1000;
+  background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
+height: auto;
 
+
+}
 #__next{
   background-image: url("https://images2.alphacoders.com/816/81670.jpg");
    
@@ -25,6 +35,20 @@ nav {
   background-size: cover;
   background-attachment: fixed;
 }
+/* RESPONSIVE DEL NAV */
+@media only screen and (max-width:990px){
+
+  .conteinerlogo{
+   margin:0 auto 10px auto;
+
+  }
+  #lin{
+    margin: auto;
+    font-size: 1.2rem;
+   
+  }
+}
+/* RESPONSIVE DEL NAV */
 .subadmi{
   margin-top: 10px;
   color:  #ea7f05;
@@ -211,55 +235,30 @@ footer{
 }
 
 
-/* ESTILOS DE CONTACTO  */
+/* ESTILOS DE MENUS  */
 
-/* .body-contacto{
-    height: 100vh;
-    width: 100vw;
-    background:linear-gradient(rgb(31, 30, 29),rgb(44, 39, 39)) ;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .body-contacto h1{
-      font-size: 2.8rem;
-    text-shadow: 2px 2px 4px   #1a1817;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      color:  #e3c5b9;
-      text-align: center;
-      text-transform: uppercase;
-  }
-.fondoprincipal{
-  text-align: center;
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    width: 700px;
-    height: 900px;
-   border-radius: 100px 100px 0 0;
-   background:linear-gradient( #1b1614,rgb(62, 57, 52),rgb(16, 10, 7)) ;
-   box-shadow: 3px 3px 3px 3px  #5f382a;
+.main-menus{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  flex-wrap: wrap;
 }
-.fondoprincipal p{
-
-  color:#fff;
-  font-size:1.4rem;
-} */
-/* FIN ESTILOS DE CONTACTO  */
+#contm{
+  display: flex;
+ background-color: #1b1919;
+ width: 100%;
+}
+/* FIN ESTILOS DE MENUS  */
 /* ESTILOS DE SOBRE - NOSOTROS  */
 
 .body-sobre-nosotros{
+  overflow: hidden;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-image: url("https://images.alphacoders.com/551/55193.jpg");
    
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-attachment: fixed;
   
@@ -284,22 +283,22 @@ footer{
    
     font-weight: bold;
     margin-top: 10px;
-    color: #e3c73bdb;
+    color: #f0a020db;
     text-align: center;
    
 }
 .hrsobrenosotros{
-    color: #f7cb2a;
+  color: #f0a020db;
     width: 700px;
     margin: auto;
 }
 
 .cont-img-sobrenosotros{
     margin: 30px auto;
-    width: 300px;
+    width: 400px;
     height: 300px;
     border-radius: 50%;
-    border: 3px solid #afa482;
+    border: 3px solid #d6a920;
     overflow: hidden;
 }
 
@@ -311,7 +310,7 @@ footer{
 }
 .cont-img-sobrenosotros img:hover{
   transform:rotate(1440deg) ;
-  transition:2000ms all ;
+  transition:2000ms all;
   
 }
 .contenedor-nosotros h2{
@@ -320,7 +319,7 @@ footer{
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #e3c73bdb;
+    color: #f0a020db;
     text-align: center;
    
 }
@@ -455,7 +454,7 @@ footer{
 
 .cont-img-sobrenosotros img {
   max-width: 100%;
-  
+  width: 100%;
   object-fit: cover;
   height:100%;
   border-radius: 50%;
@@ -499,6 +498,66 @@ footer{
   margin-bottom: 20px;
   height: auto;
   object-fit: cover;
+  border-radius: 50%;
+}}
+
+@media only screen and (max-width:540px){
+
+  .body-sobre-nosotros{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+  }
+  .contenedor-nosotros{
+    max-width: 100%;
+  margin: 0% ;
+
+    }
+  .hamburguesauno-nosotros{
+    max-width: 80%;
+    margin: 30px auto;
+    height: auto;
+   }
+   .sobrenosotrosuno .imguno{
+   width: 100%;
+   height: 100%;
+ 
+   object-fit: cover;}
+
+.hamburguesdos-nosotros{
+  max-width: 80%;
+  margin: 30px auto;
+  height: auto;
+ }
+ .sobrenosotrosdos img{
+ width: 100%;
+ height: 100%;
+
+ object-fit: cover;}
+
+.equipocontenedor img{
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.cont-img-sobrenosotros{
+  margin: 30px auto;
+  width: 70%;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #afa482;
+  overflow: hidden;
+}
+
+.cont-img-sobrenosotros img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height:100%;
   border-radius: 50%;
 }}
 /* Responsive sobre nosotros */
