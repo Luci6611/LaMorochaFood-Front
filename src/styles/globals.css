@@ -9,11 +9,13 @@
   font-family: 'Merienda', cursive;
 }
 
+
+
 .ovelay-titulo{
   position: absolute;
+  top: 35%;
   max-height: 100%;
-  bottom: 60%;
-  z-index: 2;
+  z-index: 1;
   color: white;
   font-size: 40px;
 }
@@ -587,8 +589,8 @@ footer {
 @media only screen and (max-width:540px) {
 
   .ovelay-titulo{
-     margin: auto;
-     bottom: 70%;
+     
+     top: 15%;
   }
 
   .body-sobre-nosotros {

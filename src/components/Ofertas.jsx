@@ -29,7 +29,7 @@ const Ofertas = () => {
         {
           menus.filter(menu => menu.categoria.nombre === "MAS VENDIDAS") ?
             menusFilter.map(index => (
-              <Card id="cardd" className="card-ofertas ">
+              <Card id="cardd" className="card-ofertas " key={index.nombre}>
                 <div className="img-oferta">
                   <Card.Img variant="top" src={index.img} alt={index.titulo} />
                 </div>

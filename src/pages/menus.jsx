@@ -43,7 +43,7 @@ const menus = () => {
 
         <div className='container d-flex flex-wrap justify-content-center gap-2'>
           {categorias.map(index => (
-            <a href="#" onClick={() => setSeccion(index.nombre)} key={index._id}>{index.nombre}</a>
+            <a href="#" key={index.nombre} onClick={() => setSeccion(index.nombre)}>{index.nombre}</a>
 
           ))}
         </div>
@@ -55,15 +55,15 @@ const menus = () => {
 
         {
           categorias.map(i => (
-            <Fragment key={i.nombre}>
-              <h4 id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
+            <>
+              <h4 key={i.nombre} id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
               <div className="contenedor-card-menus container">
 
                 {
                   menus.map((index) => (
                     index.categoria.nombre === i.nombre ?
-                      <Fragment key={index.nombre}>
-                        <Card id="cardd" className="card-ofertas text-light">
+                      <>
+                        <Card  key={index.nombre} id="cardd" className="card-ofertas text-light">
                           <div className="img-oferta">
                             <Card.Img variant="top" src={index.img} alt={index.nombre} />
                           </div>
@@ -98,12 +98,12 @@ const menus = () => {
                             </a>
                           </Card.Body>
                         </Card>
-                      </Fragment> : <></>
+                      </> : <></>
 
                   ))}
               </div>
 
-            </Fragment>
+            </>
 
 
           ))
