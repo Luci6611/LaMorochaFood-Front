@@ -4,9 +4,12 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const Carouseles = () => {
     return (
-      <>
-        <div>
-        <Carousel className='carousel'>
+      <>  <span className=' ovelay-titulo container-fluid  align-items-center d-flex flex-column justify-content-center'>
+            <h1 className='text-center  fa-bold'>La Morocha Hamburgueseria</h1>
+            <a className='btn btn-danger  text-light fa-bold  text-center' href='/menus'>ver menus</a>
+        </span>
+        <Carousel className='carousel overlay'>
+          
             <Carousel.Item >
                 <img
                     className="d-block w-100 h-10 carrimg"
@@ -29,7 +32,10 @@ const Carouseles = () => {
                 />
             </Carousel.Item>
         </Carousel>
-        </div></>
+
+
+        
+    </>
     );
 }
 

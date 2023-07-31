@@ -74,6 +74,7 @@ const TablaEditarMenus = () => {
                         <td> <input type="number" className='bg-dark text-light p-2' name="precio" id="" min={0} onChange={handleChange} value={menusEditados.precio} /></td>
                         <td>
                           <select name="categoria" className='bg-dark text-light p-2' id="" onChange={handleChange}>
+                            <option value="">Seleccione una categoria...</option>
                             {categorias.map(index => (
                               <option value={index._id} key={index.nombre}>{index.nombre}</option>
                             )
