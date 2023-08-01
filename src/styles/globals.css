@@ -9,10 +9,16 @@
   font-family: 'Merienda', cursive;
 }
 
+html{
+  background-image: url("https://images2.alphacoders.com/816/81670.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .contenedoradmin{
   height: 100vh;
-  overflow: auto;
+ 
 }
 .ovelay-titulo{
   position: absolute;

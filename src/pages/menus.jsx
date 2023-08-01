@@ -4,7 +4,7 @@ import { traerMenus } from '@/helpers/getOfertas';
 import Head from 'next/head'
 import React, { Fragment, useEffect, useState } from 'react'
 import Card from "react-bootstrap/Card";
-
+import Footer from '@/components/Footer'
 const menus = () => {
 
   const [menus, setMenus] = useState([]);
@@ -99,7 +99,7 @@ const menus = () => {
                           </Card.Body>
                         </Card>
                       </> : <></>
-
+            
                   ))}
               </div>
 
@@ -112,6 +112,7 @@ const menus = () => {
 
 
       </main>
+      <Footer/>
     </>
 
   )

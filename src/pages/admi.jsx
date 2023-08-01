@@ -55,7 +55,7 @@ const admi = () => {
                 <TablaEditarMenus />
                 :
                 <TablaMenus />
-              }
+              }w
               {!edit ? <>
 
                 <TablaCrearMenu />

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carouseles from '@/components/Carouseles';
 import Ofertas from '@/components/Ofertas';
+import Footer from '@/components/Footer'
+
 
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
       <Carouseles/>
       <main>
         <Ofertas />
+        <Footer/>
       </main>
 
     </>

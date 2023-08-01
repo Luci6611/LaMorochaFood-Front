@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-
+import Footer from '@/components/Footer'
 
 const conocenos = () => {
   return (
@@ -44,7 +44,7 @@ const conocenos = () => {
 
 
       </div>
-
+      <Footer/>
     </>
 
   )
