@@ -55,6 +55,7 @@ const menus = () => {
 
         {
           categorias.map(i => (
+
             <>
               <h4 key={i.nombre} id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
               <div className="contenedor-card-menus container">
@@ -62,12 +63,13 @@ const menus = () => {
                 {
                   menus.map((index) => (
                     index.categoria.nombre === i.nombre ?
+                    
                       <>
-                        <Card  key={index.nombre} id="cardd" className="card-ofertas text-light">
+                        <Card   key={index.nombre} id="cardd" className="card-ofertas text-light ">
                           <div className="img-oferta">
                             <Card.Img variant="top" src={index.img} alt={index.nombre} />
                           </div>
-                          <Card.Body className="d-flex justify-content-center flex-column">
+                          <Card.Body className="d-flex justify-content-center flex-column mb-2">
                             <Card.Title className="text-center">{index.nombre}</Card.Title>
                             <Card.Text className="text-center">
                               {index.descripcion}
@@ -98,7 +100,7 @@ const menus = () => {
                             </a>
                           </Card.Body>
                         </Card>
-                      </> : <></>
+                      </> : <h2 className='text-center text-light'>Muy Pronto</h2>
 
                   ))}
               </div>

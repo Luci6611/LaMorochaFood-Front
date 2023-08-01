@@ -1,5 +1,5 @@
 import { createCate, traerCategorias } from '@/helpers/admi';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import swal from 'sweetalert';
 
@@ -10,26 +10,62 @@ const TablaCrearCategoria = () => {
         nombreUsuario: "5666"
     }]);
 
+    const [categorias, setCategorias] = useState([]);
+    const [cateEdit, setEditarCate] = useState([]);
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCategoriasCreate((prevState) => ({ ...prevState, [name]: value }));
     };
 
-
-    const crearCategorias = async ()=>{
-         const response = await createCate(categoriasCreate);
-
-         if (response === "Categoria creada correctamente") {
-            swal(response, {
-              icon: "success",
-            });
-          } else {
-            swal(response, {
-              icon: "warning",
-  
-            });
-          };
+    const traerCategoria = async () => {
+        const response = await traerCategorias();
+        setCategorias(response);
     };
+
+
+    const crearCategorias = async () => {
+        const response = await createCate(categoriasCreate);
+
+        if (response === "Categoria creada correctamente") {
+            swal(response, {
+                icon: "success",
+            });
+        } else {
+            swal(response, {
+                icon: "warning",
+
+            });
+        };
+    };
+    
+    const editarCate = async () => {
+
+        const response = await putMenus(cateEdit);
+ 
+         if (response === "categoria actualizado correctamente") {
+             swal(response, {
+               icon: "success",
+             }).then((willDelete) => {
+                 setEdit(false);
+             });
+           } else {
+             swal(response, {
+               icon: "warning",
+   
+             });
+           };
+     };
+     
+
+    useEffect(() => {
+
+        traerCategoria();
+
+    }, [editarCate]);
+
+
 
 
     return (
@@ -61,8 +97,52 @@ const TablaCrearCategoria = () => {
                         </td>
 
                     </tr>
+                    <tr className='w-100'>
+
+
+
+                    </tr>
                 </tbody>
             </Table>
+
+<div className=' d-flex justify-content-center flex-column '>
+
+    <h1 className="text-center subadmi">Editar Categorias</h1>
+            <Table striped bordered responsive hover variant='dark' className='mt-2 mb-2 w-50'>
+                <thead>
+                    <tr>
+                        <th className='text-center'>Categoria</th>
+                        <th className='text-center'>Editar</th>
+                        <th className='text-center'>Guardar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {categorias.map(index => (
+                        <> <tr>
+                            <td> {index.nombre}</td>
+                            <td><input type="text" name="nombre" id="" className='bg-dark p-2 ' required /></td>
+                            <td >
+                                <button className='btn btn-success fw-bold' title='Eliminar' onClick={() => editarCate()}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+
+                        </>
+
+                    ))
+
+                    }
+
+                </tbody>
+            </Table>
+
+</div>
+
+
         </div>
     )
 }

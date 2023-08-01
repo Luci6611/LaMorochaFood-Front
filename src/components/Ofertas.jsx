@@ -33,7 +33,7 @@ const Ofertas = () => {
                 <div className="img-oferta">
                   <Card.Img variant="top" src={index.img} alt={index.titulo} />
                 </div>
-                <Card.Body className="d-flex justify-content-center flex-column">
+                <Card.Body className="d-flex justify-content-center flex-column m-2">
                   <Card.Title className="text-center card-titulocolor">{index.nombre}</Card.Title>
                   <Card.Text className="text-center text-white">
                     {index.descripcion}
