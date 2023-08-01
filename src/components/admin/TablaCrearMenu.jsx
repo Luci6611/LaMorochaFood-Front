@@ -7,12 +7,12 @@ import swal from 'sweetalert';
 
 const TablaCrearMenu = () => {
 
-    const [menus, setMenus] = useState([]);
+    const [menus, setMenus] = useState({img: ""});
     const [categ, setCateg] = useState([]);
 
-    const { edit, setEdit , menusEditados, setMenusEditado, creado, setCreado } = useContext(DataContext);
+    const { edit, setEdit, menusEditados, setMenusEditado, creado, setCreado } = useContext(DataContext);
 
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setMenus((prevState) => ({ ...prevState, [name]: value }));
@@ -24,9 +24,10 @@ const TablaCrearMenu = () => {
     };
 
     const setearImagen = async (e) => {
-        const {url, estado} = await upload(e.target.files[0]);
-console.log(estado);
+        const url = await upload(e.target.files[0]);
         menus.img = url;
+        console.log(url);
+        console.log(menus.img);
     };
 
     useEffect(() => {
@@ -35,19 +36,19 @@ console.log(estado);
 
 
     const crearMenu = async () => {
-       setCreado(!creado);
-       const response = await createMenu(menus);
+        setCreado(!creado);
+        const response = await createMenu(menus);
 
-          if (response === "producto agregado") {
+        if (response === "producto agregado") {
             swal(response, {
-              icon: "success",
+                icon: "success",
             });
-          } else {
+        } else {
             swal(response, {
-              icon: "warning",
-  
+                icon: "warning",
+
             });
-          };
+        };
     };
 
 
@@ -72,9 +73,9 @@ console.log(estado);
                     <tr>
                         <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="nombre" required id="" /></td>
                         <td> <input type="text" className='bg-dark text-light p-2' onChange={handleChange} name="descripcion" id="" /></td>
-                        <td> <input type="file" className='bg-dark text-light p-2' name="img" id="" onChange={setearImagen} /></td>
-                        <td> <input type="number" className='bg-dark text-light p-2'  name="precio" min={0} id="" onChange={handleChange} />
-                        
+                        <td> <input type="file" className='bg-dark text-light p-2' name="img" required id="" onChange={setearImagen} /></td>
+                        <td> <input type="number" className='bg-dark text-light p-2' name="precio" required min={0} id="" onChange={handleChange} />
+
 
                         </td>
                         <td>
@@ -92,13 +93,18 @@ console.log(estado);
                                 <option>Seleccione una categoria</option>
                                 {
                                     categ.map(index => (
-                                        <option  value={index._id} key={index.nombre}>{index.nombre}</option>
+                                        <option value={index._id} key={index.nombre}>{index.nombre}</option>
                                     ))
                                 }
 
                             </select>
                         </td>
-                        <td className='d-flex gap-2 justify-content-center'> <button className='btn btn-success fw-bold' title='crear menu' onClick={() => crearMenu()}>Crear</button>
+
+                        <td className='d-flex gap-2 justify-content-center'>{menus.img ?
+                            <button className='btn btn-success fw-bold' title='crear menu' onClick={() => crearMenu()}>Crear</button> : <div className="spinner-border text-success" role="status">
+                                <span className="sr-only"></span>
+                            </div>
+                        }
                         </td>
 
                     </tr>
