@@ -12,6 +12,7 @@
 
 .contenedoradmin{
   height: 100vh;
+  overflow: auto;
 }
 .ovelay-titulo{
   position: absolute;
