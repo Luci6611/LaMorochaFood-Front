@@ -10,7 +10,9 @@
 }
 
 
-
+.contenedoradmin{
+  height: 100vh;
+}
 .ovelay-titulo{
   position: absolute;
   top: 35%;

@@ -50,7 +50,7 @@ const admi = () => {
       {
         token ?
 
-            <main className='container  p-3 '>
+            <main className='contenedoradmin  p-3 '>
               {edit ?
                 <TablaEditarMenus />
                 :
