@@ -61,7 +61,8 @@ nav {
 
 #__next {
   background-image: url("https://images2.alphacoders.com/816/81670.jpg");
-
+height: 100vh;
+overflow: auto;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
