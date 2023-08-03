@@ -2,6 +2,9 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
+
+/*   const pathname = useRouter();
+ */  
   return (
     <footer className='container-fluid  p-3 footer text-light  position-relative bottom-0'>
       <div className='container p-3'>
