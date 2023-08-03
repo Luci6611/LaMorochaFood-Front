@@ -4,27 +4,27 @@ import { traerMenus } from '@/helpers/getOfertas';
 import Head from 'next/head'
 import React, { Fragment, useEffect, useState } from 'react'
 import Card from "react-bootstrap/Card";
-
+import Footer from '@/components/Footer'
 const menus = () => {
 
   const [menus, setMenus] = useState([]);
   const [categorias, setCate] = useState([]);
   const [seccion, setSeccion] = useState("");
+  const [cambiar, setCambiar] = useState(false);
 
-
-
-
-  const traerData = async () => {
+  const seccionFil = menus.filter(index => (index.categoria.nombre === seccion));
+    const traerData = async () => {
     const response = await traerMenus();
     const responseCate = await traerCategorias();
     setMenus(response);
     setCate(responseCate);
   }
 
+
   useEffect(() => {
 
     traerData();
-
+  
   }, [seccion])
 
   return (
@@ -43,7 +43,7 @@ const menus = () => {
 
         <div className='container d-flex flex-wrap justify-content-center gap-2'>
           {categorias.map(index => (
-            <a href="#" key={index.nombre} onClick={() => setSeccion(index.nombre)}>{index.nombre}</a>
+            <a href="#" key={index._id} onClick={() => { setSeccion(index.nombre), setCambiar(true) }}>{index.nombre}</a>
 
           ))}
         </div>
@@ -53,25 +53,36 @@ const menus = () => {
       </div>
       <main className='main-menus p-2 container-fluid'>
 
-        {
-          categorias.map(i => (
+   
+     
+     {  
+     
+      !cambiar ?
+     
+     categorias.map(i => (
 
-            <>
-              <h4 key={i.nombre} id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>
+             <>
+           {  menus.filter(menu => menu.categoria.nombre == i.nombre).length > 0   ?
+           <>
+              <h4  key={i._id} id='titulo-ofertas' className='text-center fs-2'>{i.nombre}</h4>      
+              
+              
+              
+              
               <div className="contenedor-card-menus container">
 
                 {
                   menus.map((index) => (
                     index.categoria.nombre === i.nombre ?
-                    
-                      <>
-                        <Card   key={index.nombre} id="cardd" className="card-ofertas text-light ">
+
+                      <Fragment key={index.nombre}>
+                        <Card key={index.nombre} id="cardd" className="card-ofertas text-light ">
                           <div className="img-oferta">
                             <Card.Img variant="top" src={index.img} alt={index.nombre} />
                           </div>
                           <Card.Body className="d-flex justify-content-center flex-column mb-2">
-                            <Card.Title className="text-center">{index.nombre}</Card.Title>
-                            <Card.Text className="text-center">
+                            <Card.Title className="text-center titulo-card">{index.nombre}</Card.Title>
+                            <Card.Text className="text-center descripcion-card">
                               {index.descripcion}
                             </Card.Text>
                             <Card.Text className="text-center text-light">
@@ -100,22 +111,86 @@ const menus = () => {
                             </a>
                           </Card.Body>
                         </Card>
-                      </> : <h2 className='text-center text-light'>Muy Pronto</h2>
+
+                      </Fragment> : <></>
 
                   ))}
               </div>
+              </>
+              
+              
+              
+              
+              
+              
+              : 
+                   
+              
+              <> </>
+              }
+       
+       </> 
+     
+           )) : <>
+           
+           <h4  id='titulo-ofertas' className='text-center fs-2'>{seccion}</h4> 
 
-            </>
+             <div className="contenedor-card-menus container">
 
+                { seccionFil.length > 0 ?
+                  seccionFil.map((index) => (
+                 
 
-          ))
-        }
+                      <Fragment key={index.nombre}>
+                        <Card key={index.nombre} id="cardd" className="card-ofertas text-light ">
+                          <div className="img-oferta">
+                            <Card.Img variant="top" src={index.img} alt={index.nombre} />
+                          </div>
+                          <Card.Body className="d-flex justify-content-center flex-column mb-2">
+                            <Card.Title className="text-center titulo-card">{index.nombre}</Card.Title>
+                            <Card.Text className="text-center descripcion-card">
+                              {index.descripcion}
+                            </Card.Text>
+                            <Card.Text className="text-center text-light">
+                              {index.disponible === true ? "Disponible" : "No disponible"}
+                            </Card.Text>
+                            <Card.Title className="text-center">$ {index.precio}</Card.Title>
+                            <a type="button" className="bt" target='_blank' href={`https://api.whatsapp.com/send?phone=541171044620&text=%C2%A1Hola!%20%F0%9F%98%80%20%C2%BFComo%20Estas%3F%20Quer%C3%ADa%20pedir%20este%20menu%20${index.nombre}%C3%BA%20%F0%9F%8D%94%20Muchas%20Gracias!%20%F0%9F%98%9C%F0%9F%98%8B`}>
+                              <span className="button__text fw-bold">Pedir</span>
+                              <span className="button__icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth="2"
+                                  strokeLinejoin="round"
+                                  strokeLinecap="round"
+                                  stroke="currentColor"
+                                  height="24"
+                                  fill="none"
+                                  className="svg"
+                                >
+                                  <line y2="19" y1="5" x2="12" x1="12"></line>
+                                  <line y2="12" y1="12" x2="19" x1="5"></line>
+                                </svg>
+                              </span>
+                            </a>
+                          </Card.Body>
+                        </Card>
 
+                      </Fragment> 
 
+                  )) : <h2 className="text-center text-light">Muy Pronto!</h2>
+                
+                }
+              </div>
+           </>
+           }
 
       </main>
-    </>
 
+        <Footer />
+</>
   )
 }
 
