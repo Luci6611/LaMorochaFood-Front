@@ -7,9 +7,9 @@ const Carouseles = () => {
         
       <>  
     
-  <div className=' ovelay-titulo container-fluid  align-items-center d-flex flex-column justify-content-center'>
-            <h1 className='text-center  fa-bold'>La Morocha Hamburgueseria</h1>
-            <a className='btn btn-danger  text-light fa-bold  text-center' href='/menus'>ver menus</a>
+  <div className='te ovelay-titulo container-fluid  align-items-center d-flex flex-column justify-content-center'>
+            <h1 className='text-center text-car fa-bold'>LA MOROCHA FOOD</h1>
+            <a className=' btncar  text-light fa-bold  text-center' href='/menus'>ver menus</a>
         </div>
         <Carousel className='carousel overlay h-100'>
           
