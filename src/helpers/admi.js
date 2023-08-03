@@ -53,6 +53,26 @@ export const createCate = async (categ) => {
 
 };
 
+export const putCate = async (categ) => {
+    const response = await fetch(`${url}categorias/${categ.id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                nombre: categ.nombre
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": cookie.get('token'),
+            },
+        }
+
+    );
+
+    const data = await response.json();
+    return data.msg;
+
+};
+
 export const createMenu = async (menu) => {
     const response = await fetch(`${url}productos`,
         {

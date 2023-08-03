@@ -26,8 +26,6 @@ const TablaCrearMenu = () => {
     const setearImagen = async (e) => {
         const url = await upload(e.target.files[0]);
         menus.img = url;
-        console.log(url);
-        console.log(menus.img);
     };
 
     useEffect(() => {
