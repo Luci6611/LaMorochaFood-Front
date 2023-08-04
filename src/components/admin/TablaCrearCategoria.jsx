@@ -77,7 +77,7 @@ const TablaCrearCategoria = () => {
 
 
     return (
-        <div className='mt-5'>
+        <div className='mt-2'>
             <h1 className="text-center subadmi">Crear Categoria de Menu</h1>
 
             <Table striped responsive bordered hover variant="dark" className='mt-3'>
