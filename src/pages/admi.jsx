@@ -15,11 +15,14 @@ const TablaMenus = lazy(() => import('@/components/admin/TablaMenus'), {
 });
 
 import { DataContext } from '@/context/DataContext';
+import { useRouter } from 'next/router';
 
 
 
 const admi = () => {
 
+
+  const history = useRouter();
 
   const [token, setToken] = useState(false);
   const { edit, setEdit , menusEditados, setMenusEditados } = useContext(DataContext);
@@ -33,7 +36,27 @@ const admi = () => {
       setToken(true);
     }
 
-  }, [ menusEditados]);
+    const handleCookieChange = () => {
+      const cookie = new Cookies();
+      if (!cookie.get("token")) {
+        history.push("/login");
+
+      }
+
+
+    };
+
+    handleCookieChange();
+
+    const interval = setInterval(handleCookieChange, 1000);
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
+
+
+  }, [ menusEditados , history]);
 
 
 
