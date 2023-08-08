@@ -7,12 +7,9 @@ const Carouseles = () => {
         
       <>  
     
-  <div className='te ovelay-titulo container-fluid  align-items-center d-flex flex-column justify-content-center'>
-            <h1 className='text-center text-car fa-bold'>LA MOROCHA FOOD</h1>
-            <a className=' btncar  text-light fa-bold  text-center' href='/menus'>ver menus</a>
-        </div>
-        <Carousel className='carousel overlay h-100'>
           
+ 
+        <Carousel className='carousel overlay h-100'>
             <Carousel.Item >
                 <img
                     className="d-block w-100 h-10 carrimg"

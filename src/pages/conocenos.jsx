@@ -24,21 +24,35 @@ const conocenos = () => {
           <h2>como surgio?</h2>
           <div className="sobrenosotrosuno">
             <div className="hamburguesauno-nosotros">
-              <img className='imguno' src="/fondo3.jpg" alt="hamburguesa" /></div>
+              <img className='imguno mb-3' src="/8.jpg" alt="hamburguesa" />
+              <img className='imguno mb-3' src="/ff.jpg" alt="hamburguesa" />
+              <img className='imguno mb-3' src="/s.jpg" alt="hamburguesa" />
+              <img className='imguno mb-3' src="/r.jpg" alt="hamburguesa" />
+              </div>
+              
             <div className="textouno">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, consectetur nostrum? Distinctio dolor illo assumenda saepe alias quae exercitationem. Odit ipsum, earum eum expedita dolores quisquam ducimus tenetur aliquid ex.</p></div>
+              <p>Hola somos Nadia y Jony y queríamos contarles que  el  proyecto "La Morocha" comenzó en el año 2020 ,en  plena pandemia y con un país en una situación complicada , fue un tiempo muy difícil,  en el cual tuvimos que adaptarnos a las condiciones y restricciones que había en ese momento , empezó con una idea en conjunto con una pareja amiga  ( Mauri y Jaz ) que de paso aprovechamos para agradecerles por haber Sido parte de este emprendimiento desde un comienzo y felicitarlos también por haber podido abrir su propio negocio también gastronómico  que es sinónimo de crecimiento. Seguimos entonces con La Morocha Food Truck  contándoles  que comenzó como algo sencillo, para poder tener el plato de comida diario en casa y termino creciendo un poco mas todos los días , gracias a Dios en primer lugar y a nuestras familias , amigos , vecinos , conocidos y todos nuestros clientes que   hicieron y hacen que cada vez más La Morocha siga creciendo . 
+</p></div>
           </div>
           <div className="sobrenosotrosdos">
             <div className="textodos">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, consectetur nostrum? Distinctio dolor illo assumenda saepe alias quae exercitationem. Odit ipsum, earum eum expedita dolores quisquam ducimus tenetur aliquid ex.</p></div>
+              <p>El equipo de la morocha se basa en que nuestro producto se haga de una manera especial , como si se hiciera para uno mismo ,  todos queremos comer y degustar algo rico , por eso trabajamos con marcas de primera línea , y trabajamos materia prima de calidad , porque queremos que lo que se venda sea algo de otro nivel , algo que no pruebes en cualquier lado ...
+Por otro lado contarles que trabajamos día a día para poder mejorar , para poder aprender más sobre esto tan lindo que es la gastronomía , contamos con 13 variedades diferentes de hamburguesas que es el fuerte de nosotros , y después por supuesto sandwiches, panchos , tostados , papas , aros de cebolla , milanesas al plato , etc ...
+Hoy después de 3 años de trabajar en equipo estamos orgullosos de todo lo que se logró , y contentos porque sabemos que cada vez va a ir creciendo más .
+Desde ya muchas gracias por querer conocernos y conocer nuestra historia .
+
+El Equipo De La Morocha agradece a cada uno de ustedes por hacer esto posible</p></div>
             <div className="hamburguesdos-nosotros">
-              <img src="/fondo5.jpg" alt="hamburguesa" /></div>
+              <img className='mb-3' src="/o.jpg" alt="hamburguesa" />
+              <img className='mb-3' src="/j.jpg" alt="hamburguesa" />
+              <img className='mb-3' src="/q.jpg" alt="hamburguesa" />
+              <img className='mb-3' src="/w.jpg" alt="hamburguesa" />
+              </div>
           </div>
           <h2>Nuestro equipo</h2>
           <div className="equipocontenedor">
-            <img src="/personauno.jpg" alt="empleado1" />
-            <img src="/personauno.jpg" alt="empleado2" />
-            <img src="/personauno.jpg" alt="empleado3" />
+            <img src="/e.jpg" alt="empleado1" />
+           
           </div>
         </div>
 
