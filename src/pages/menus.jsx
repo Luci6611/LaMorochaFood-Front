@@ -82,7 +82,7 @@ const menus = () => {
                           </div>
                           <Card.Body className="d-flex justify-content-center flex-column mb-2 HH">
                             <Card.Title className="text-center titulo-card fs-5">{index.nombre}</Card.Title>
-                            <Card.Text id='de' className="text-center fs-6 descripcion-card">
+                            <Card.Text id='de' className="text-center fs-5 descripcion-card">
                               {index.descripcion}
                             </Card.Text>
                             <Card.Text className="text-center text-light">
