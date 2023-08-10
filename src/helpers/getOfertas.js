@@ -14,7 +14,7 @@ export const traerMenusMasVendidos = async () => {
 };
 
 export const traerMenus = async () => {
-    const response = await fetch(`${url}productos`, {
+    const response = await fetch(`${url}productos?limite=0`, {
         method: "GET",
         headers: {
             "Content-type": "application/json; charset=UTF-8",

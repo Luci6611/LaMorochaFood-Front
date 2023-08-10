@@ -51,7 +51,7 @@ const menus = () => {
 
 
       </div>
-      <main className='main-menus p-2 container-fluid'>
+      <main className='main-menus h-auto p-2 container-fluid'>
 
    
      
@@ -80,7 +80,7 @@ const menus = () => {
                           <div className="img-oferta">
                             <Card.Img variant="top" src={index.img} alt={index.nombre} />
                           </div>
-                          <Card.Body className="d-flex justify-content-center flex-column mb-2">
+                          <Card.Body className="d-flex justify-content-center flex-column mb-2 HH">
                             <Card.Title className="text-center titulo-card fs-5">{index.nombre}</Card.Title>
                             <Card.Text id='de' className="text-center fs-6 descripcion-card">
                               {index.descripcion}
