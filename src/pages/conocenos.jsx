@@ -19,7 +19,7 @@ const conocenos = () => {
           <hr className='hrsobrenosotros' />
           <div className="cont-img-sobrenosotros">
 
-            <img src="/lamorochalogo2.jpg" alt="lamorochalogo" />
+            <img src="/Lamorochalogo2.jpg" alt="lamorochalogo" />
           </div>
           <h2>como surgio?</h2>
           <div className="sobrenosotrosuno">
